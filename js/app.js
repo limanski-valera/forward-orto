@@ -5122,14 +5122,6 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    function focusHomeSLider() {
-        const homeSliderClass = ".full-page-home";
-        document.addEventListener("watcherCallback", (function(e) {
-            const entry = e.detail.entry;
-            const targetElement = entry.target;
-            if (targetElement === document.querySelector(homeSliderClass) && targetElement.classList.contains("_watcher-view")) gotoblock_gotoBlock(homeSliderClass);
-        }));
-    }
     function initCatalog() {
         if (document.querySelector("._header-catalog-button") && document.querySelector(".catalog-header")) {
             const closeButton = document.querySelector(".catalog-header__button-back");
@@ -5182,10 +5174,27 @@
             }));
         }
     }
+    function displayScroll() {
+        if (document.querySelector("[data-display-scroll]")) {
+            const displays = document.querySelectorAll("[data-display-scroll]");
+            displays.forEach(((display, index) => {
+                display.addEventListener("wheel", (e => {
+                    e.preventDefault();
+                    if (e.deltaY > 150) {
+                        gotoblock_gotoBlock(`.${display.nextElementSibling.classList[0]}`);
+                        if (display.nextElementSibling.classList.contains("full-page-home")) document.documentElement.classList.add("_open-slider"); else if (document.documentElement.classList.contains("_open-slider")) document.documentElement.classList.remove("_open-slider");
+                    } else if (e.deltaY < -150 && display.previousElementSibling) {
+                        gotoblock_gotoBlock(`.${display.previousElementSibling.classList[0]}`);
+                        if (document.documentElement.classList.contains("_open-slider")) document.documentElement.classList.remove("_open-slider");
+                    }
+                }));
+            }));
+        }
+    }
     document.addEventListener("DOMContentLoaded", (() => {
         initCustomTabs();
         initCatalog();
-        focusHomeSLider();
+        displayScroll();
     }));
     window["FLS"] = true;
     isWebp();
