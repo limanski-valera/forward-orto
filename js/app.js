@@ -48,6 +48,17 @@
         hash = hash ? `#${hash}` : window.location.href.split("#")[0];
         history.pushState("", "", hash);
     }
+    function fullVHfix() {
+        const fullScreens = document.querySelectorAll("[data-fullscreen]");
+        if (fullScreens.length && isMobile.any()) {
+            window.addEventListener("resize", fixHeight);
+            function fixHeight() {
+                let vh = window.innerHeight * .01;
+                document.documentElement.style.setProperty("--vh", `${vh}px`);
+            }
+            fixHeight();
+        }
+    }
     let _slideUp = (target, duration = 500, showmore = 0) => {
         if (!target.classList.contains("_slide")) {
             target.classList.add("_slide");
@@ -5121,19 +5132,31 @@
     }
     function initCatalog() {
         if (document.querySelector("._header-catalog-button") && document.querySelector(".catalog-header")) {
-            const button = document.querySelector("._header-catalog-button");
             const closeButton = document.querySelector(".catalog-header__button-back");
-            button.addEventListener("click", (() => {
-                document.documentElement.classList.toggle("catalog-open");
+            document.addEventListener("click", (e => {
+                if (e.target.closest("._header-catalog-button")) {
+                    document.documentElement.classList.toggle("catalog-open");
+                    document.documentElement.classList.toggle("lock");
+                } else if (!e.target.closest(".header") && document.documentElement.classList.contains("catalog-open")) {
+                    console.log("click");
+                    document.documentElement.classList.remove("catalog-open");
+                    document.documentElement.classList.remove("lock");
+                }
             }));
             closeButton.addEventListener("click", (() => {
                 document.documentElement.classList.remove("catalog-open");
             }));
             if (document.documentElement.clientWidth < 768) document.addEventListener("click", (e => {
-                if (e.target.closest(".catalog-header__title")) document.documentElement.classList.add("catalog-open");
+                if (e.target.closest(".catalog-header__title")) {
+                    document.documentElement.classList.add("catalog-open");
+                    document.documentElement.classList.add("lock");
+                }
             }));
             document.addEventListener("click", (e => {
-                if (e.target.closest(".icon-menu") && document.documentElement.classList.contains("catalog-open")) document.documentElement.classList.remove("catalog-open");
+                if (e.target.closest(".icon-menu") && document.documentElement.classList.contains("catalog-open")) {
+                    document.documentElement.classList.remove("catalog-open");
+                    document.documentElement.classList.remove("lock");
+                }
             }));
         }
     }
@@ -5142,14 +5165,19 @@
             const buttons = document.querySelectorAll(".catalog-header__title");
             const bodies = document.querySelectorAll(".catalog-header__body");
             bodies.forEach((item => item.style = "display: none"));
+            function closeTabs() {
+                buttons.forEach((button => button.classList.remove("_tab-active")));
+                bodies.forEach((item => item.style = "display: none"));
+            }
+            function openTab(index) {
+                closeTabs();
+                buttons[index].classList.add("_tab-active");
+                bodies[index].style = "display: block";
+            }
+            buttons.forEach(((button, index) => button.classList.contains("_tab-active") ? bodies[index].style = "display: block" : bodies[index].style = "display: none"));
             buttons.forEach(((button, index) => {
-                button.classList.remove("_tab-active");
-                button.addEventListener("click", (e => {
-                    button.classList.add("_tab-active");
-                    bodies.forEach(((item, i) => {
-                        i === index ? item.style = "display: block" : item.style = "display: none";
-                    }));
-                    buttons.forEach((item => item !== e.target ? item.classList.remove("_tab-active") : item));
+                button.addEventListener("click", (() => {
+                    openTab(index);
                 }));
             }));
         }
@@ -5163,6 +5191,7 @@
     isWebp();
     addLoadedClass();
     menuInit();
+    fullVHfix();
     tabs();
     pageNavigation();
     headerScroll();
