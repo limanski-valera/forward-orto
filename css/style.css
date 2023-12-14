@@ -1291,9 +1291,15 @@ body::after {
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0);
-  -webkit-transition: all 1s 0.5s;
-  transition: all 1s 0.5s;
+  -webkit-transition: all 1s 1s;
+  transition: all 1s 1s;
   pointer-events: none;
+}
+
+._scrolling-to-footer ._nav-arrow {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  bottom: -1.875rem;
 }
 
 ._nav-arrow:hover::before {
@@ -1602,10 +1608,34 @@ body::after {
 }
 
 .footer__bottom {
-  border-top: 1px solid #35797B;
+  position: relative;
   padding-top: 2.125rem;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.8125rem;
+}
+
+.footer__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 8.125rem;
+  height: 0.125rem;
+  background: -webkit-gradient(linear, left top, right top, from(#35797b), to(#72878f));
+  background: linear-gradient(90deg, #35797b, #72878f);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.footer__bottom._watcher-view::before {
+  left: 0;
+  width: 100%;
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
 }
 
 .footer__link {
@@ -1702,8 +1732,22 @@ body::after {
 }
 
 .footer-button-top {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   -webkit-animation: top-button 2s infinite linear;
           animation: top-button 2s infinite linear;
+}
+
+._watcher-view .footer-button-top {
+  bottom: calc(100% + 1.25rem);
+  opacity: 1;
+  -webkit-transition: bottom 1s 0.5s, opacity 1s 0.5s;
+  transition: bottom 1s 0.5s, opacity 1s 0.5s;
 }
 
 @-webkit-keyframes top-button {
@@ -2034,10 +2078,10 @@ body::after {
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0);
-  -webkit-transition: opacity 0.5s 1.5s, -webkit-transform 0.5s 1.5s;
-  transition: opacity 0.5s 1.5s, -webkit-transform 0.5s 1.5s;
-  transition: transform 0.5s 1.5s, opacity 0.5s 1.5s;
-  transition: transform 0.5s 1.5s, opacity 0.5s 1.5s, -webkit-transform 0.5s 1.5s;
+  -webkit-transition: opacity 0.5s 1s, -webkit-transform 0.5s 1s;
+  transition: opacity 0.5s 1s, -webkit-transform 0.5s 1s;
+  transition: transform 0.5s 1s, opacity 0.5s 1s;
+  transition: transform 0.5s 1s, opacity 0.5s 1s, -webkit-transform 0.5s 1s;
 }
 
 .full-page-home__title {
