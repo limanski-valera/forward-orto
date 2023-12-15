@@ -7782,12 +7782,18 @@ PERFORMANCE OF THIS SOFTWARE.
             if (targetElement.classList.contains("footer__bottom")) if (targetElement.classList.contains("_watcher-view") && !document.documentElement.classList.contains("_scrolling-to-footer")) document.documentElement.classList.add("_scrolling-to-footer"); else if (!targetElement.classList.contains("_watcher-view") && document.documentElement.classList.contains("_scrolling-to-footer")) document.documentElement.classList.remove("_scrolling-to-footer");
         }));
     }
+    function filterInit() {
+        if (document.querySelector(".filters__open-button") && document.querySelector(".filters__top-row") && document.querySelector(".filters__close-button")) document.addEventListener("click", (e => {
+            if (e.target.closest(".filters__open-button") && !document.documentElement.classList.contains("filter-opened")) document.documentElement.classList.add("filter-opened"); else if (e.target.closest(".filters__close-button") && document.documentElement.classList.contains("filter-opened")) document.documentElement.classList.remove("filter-opened");
+        }));
+    }
     document.addEventListener("DOMContentLoaded", (() => {
         initCustomTabs();
         initCatalog();
         displayScroll();
         footerDecor();
         if (document.documentElement.clientWidth < 768) catalogViews();
+        filterInit();
     }));
     window["FLS"] = true;
     isWebp();
