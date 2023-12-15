@@ -1592,13 +1592,14 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   white-space: nowrap;
 }
 
 .filters__selected-item:active {
   background-color: #f5f5f5;
+  color: #000;
 }
 
 .filters__decor-selected-item {
@@ -4523,6 +4524,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     background-color: transparent;
   }
 
+  .filters--dark .filters__selected-item:active {
+    background-color: #f5f5f5;
+    color: #000;
+  }
+
   .filters--dark .filters__decor-selected-item::before,
   .filters--dark .filters__decor-selected-item::after {
     background-color: #fff;
@@ -4735,6 +4741,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .window-info-wrapper:hover .window-info-wrapper__body {
     visibility: visible;
     opacity: 1;
+  }
+
+  .filters--dark .filters__selected-item:hover {
+    background-color: #f5f5f5;
+    color: #000;
+  }
+
+  .filters__selected-item:hover .filters__decor-selected-item::before,
+  .filters__selected-item:hover .filters__decor-selected-item::after {
+    background-color: #000;
   }
 
   .header__call:hover {
@@ -6834,6 +6850,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .filters__selected-item:hover {
     background-color: #f5f5f5;
+    color: #000;
   }
 
   .filters__button:hover {
