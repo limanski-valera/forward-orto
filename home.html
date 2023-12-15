@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231215134801">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231215222717">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -300,7 +300,7 @@
 			</div>
 		</header>
 		<main class="home">
-			<section data-display-scroll class="home__main-block main-block-home">
+			<section class="home__main-block main-block-home">
 				<div class="main-block-home__container">
 					<div class="main-block-home__offer">
 						<h1 class="main-block-home__title">
@@ -316,7 +316,7 @@
 					</div>
 				</div>
 			</section>
-			<section data-display-scroll class="home__about about-home">
+			<section class="home__about about-home">
 				<div class="about-home__container">
 					<header data-watch class="about-home__header">
 						<div class="about-home__left-header">
@@ -351,75 +351,155 @@
 					</div>
 				</div>
 			</section>
-			<div data-display-scroll data-watch data-watch-threshold="0.3" class="home__full-page full-page-home">
-				<div class="full-page-home__slider swiper">
-					<div class="full-page-home__wrapper swiper-wrapper">
-						<div class="full-page-home__slide swiper-slide">
-							<section class="full-page-home__section">
-								<div class="full-page-home__image">
-									<picture><source srcset="img/home/slider-1.webp" type="image/webp"><img class="full-page-home__image" src="img/home/slider-1.jpeg" alt="" /></picture>
-								</div>
-								<div class="full-page-home__content">
-									<h1 class="full-page-home__title">
-										ПРОТЕЗНО-ОРТОПЕДИЧНІ ВИРОБИ
-									</h1>
-									<div class="full-page-home__text">
-										Забезпечуємо осіб з обмеженнями повсякденного
-										функціонування протезно-ортопедичними виробами. Якість
-										продукції забезпечується комплектуючими та обладнанням
-										відомих світових компаній. "Форвард-Орто" пропонує виїзд
-										медико-технічних бригад, а також надає послуги з
-										адаптації та освоєння засобом реабілітації
-									</div>
-									<a href="#" class="full-page-home__button button">Замовити<span class="_icon-arrow"></span></a>
-								</div>
-							</section>
-						</div>
-						<div class="full-page-home__slide swiper-slide">
-							<section class="full-page-home__section">
-								<div class="full-page-home__image">
-									<picture><source srcset="img/home/slider-2.webp" type="image/webp"><img class="full-page-home__image" src="img/home/slider-2.jpeg" alt="" /></picture>
-								</div>
-								<div class="full-page-home__content">
+			<section class="home__slider">
+				<div class="home-slider__slider swiper">
+					<div class="home-slider__wrapper swiper-wrapper">
+						<section data-watch class="home__slide full-page-home full-page-home--first swiper-slide">
+							<span class="full-page-home__bg"></span>
+							<picture><source srcset="img/home/slider-2.webp" type="image/webp"><img data-watch data-watch-threshold="0.1" class="full-page-home__image" src="img/home/slider-2.jpeg" alt="" /></picture>
+							<div class="full-page-home__container">
+								<div data-watch class="full-page-home__content">
 									<h1 class="full-page-home__title">КРІСЛА КОЛІСНІ</h1>
 									<div class="full-page-home__text">
-										На підприємстві діє 3 протезні та взуттєва дільниця, на
-										яких працює близько 100 осіб. Це дає змогу в достатній
-										кількості виготовляти засоби реабілітації
+										На підприємстві діє 3 протезні та взуттєва дільниця, на яких працює
+										близько 100 осіб. Це дає змогу в достатній кількості виготовляти
+										засоби реабілітації
 									</div>
 									<a href="#" class="full-page-home__button button">Замовити<span class="_icon-arrow"></span></a>
 								</div>
-							</section>
-						</div>
-						<div class="full-page-home__slide swiper-slide">
-							<section class="full-page-home__section">
-								<div class="full-page-home__image">
-									<picture><source srcset="img/home/slider-3.webp" type="image/webp"><img class="full-page-home__image" src="img/home/slider-3.jpeg" alt="" /></picture>
+							</div>
+						</section>
+						<section data-watch class="home__slide full-page-home full-page-home--second swiper-slide">
+							<span class="full-page-home__bg"></span>
+							<picture><source srcset="img/home/slider-1.webp" type="image/webp"><img data-watch data-watch-threshold="0.1" class="full-page-home__image" src="img/home/slider-1.jpeg" alt="" /></picture>
+							<div class="full-page-home__container">
+								<div data-watch class="full-page-home__content">
+									<h1 class="full-page-home__title">ПРОТЕЗНО-ОРТОПЕДИЧНІ ВИРОБИ</h1>
+									<div class="full-page-home__text">
+										Забезпечуємо осіб з обмеженнями повсякденного функціонування
+										протезно-ортопедичними виробами. Якість продукції забезпечується
+										комплектуючими та обладнанням відомих світових компаній.
+										"Форвард-Орто" пропонує виїзд медико-технічних бригад, а також надає
+										послуги з адаптації та освоєння засобом реабілітації
+									</div>
+									<a href="#" class="full-page-home__button button">Замовити<span class="_icon-arrow"></span></a>
 								</div>
-								<div class="full-page-home__content">
+							</div>
+						</section>
+						<section data-watch class="home__slide full-page-home full-page-home--third swiper-slide">
+							<span class="full-page-home__bg"></span>
+							<picture><source srcset="img/home/slider-3.webp" type="image/webp"><img data-watch data-watch-threshold="0.1" class="full-page-home__image" src="img/home/slider-3.jpeg" alt="" /></picture>
+							<div class="full-page-home__container">
+								<div data-watch class="full-page-home__content">
 									<h1 class="full-page-home__title">ОРТОПЕДИЧНЕ ВЗУТТЯ</h1>
 									<div class="full-page-home__text">
-										На підприємстві діє 3 протезні та взуттєва дільниця, на
-										яких працює близько 100 осіб. Це дає змогу в достатній
-										кількості виготовляти засоби реабілітації
+										На підприємстві діє 3 протезні та взуттєва дільниця, на яких працює
+										близько 100 осіб. Це дає змогу в достатній кількості виготовляти
+										засоби реабілітації
 									</div>
 									<a href="#" class="full-page-home__button button">Замовити<span class="_icon-arrow"></span></a>
 								</div>
-							</section>
-						</div>
+							</div>
+						</section>
 					</div>
-					<div class="full-page-home__slides-names">
-						<div class="full-page-home__slide-name">
-							ПРОТЕЗНО-ОРТОПЕДИЧНІ ВИРОБИ
-						</div>
-						<div class="full-page-home__slide-name">КРІСЛА КОЛІСНІ</div>
-						<div class="full-page-home__slide-name">ОРТОПЕДИЧНЕ ВЗУТТЯ</div>
-					</div>
-					<div class="swiper-pagination">
-						<span class="swiper-pagination__bullet"></span>
+					<div class="full-page-home__labels">
 					</div>
 				</div>
-			</div>
+				<div class="home__slides-titles titles-home-slides">
+					<span data-goto=".full-page-home--first" class="titles-home-slides__title _active">ПРОТЕЗНО-ОРТОПЕДИЧНІ ВИРОБИ</span>
+					<span data-goto=".full-page-home--second" class="titles-home-slides__title">КРІСЛА КОЛІСНІ</span>
+					<span data-goto=".full-page-home--third" class="titles-home-slides__title">ОРТОПЕДИЧНЕ ВЗУТТЯ</span>
+				</div>
+			</section>
+
+
+			<!-- <div data-watch data-watch-threshold="0.3" class="home__full-page full-page-home">
+                    <div class="full-page-home__slider swiper">
+                        <div class="full-page-home__wrapper swiper-wrapper">
+                            <div class="full-page-home__slide swiper-slide">
+                                <section class="full-page-home__section">
+                                    <div class="full-page-home__image">
+                                        <img
+                                            class="full-page-home__image"
+                                            src="img/home/slider-1.jpeg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="full-page-home__content">
+                                        <h1 class="full-page-home__title">
+                                            ПРОТЕЗНО-ОРТОПЕДИЧНІ ВИРОБИ
+                                        </h1>
+                                        <div class="full-page-home__text">
+                                            Забезпечуємо осіб з обмеженнями повсякденного
+                                            функціонування протезно-ортопедичними виробами. Якість
+                                            продукції забезпечується комплектуючими та обладнанням
+                                            відомих світових компаній. "Форвард-Орто" пропонує виїзд
+                                            медико-технічних бригад, а також надає послуги з
+                                            адаптації та освоєння засобом реабілітації
+                                        </div>
+                                        <a href="#" class="full-page-home__button button"
+                                            >Замовити<span class="_icon-arrow"></span
+                                        ></a>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="full-page-home__slide swiper-slide">
+                                <section class="full-page-home__section">
+                                    <div class="full-page-home__image">
+                                        <img
+                                            class="full-page-home__image"
+                                            src="img/home/slider-2.jpeg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="full-page-home__content">
+                                        <h1 class="full-page-home__title">КРІСЛА КОЛІСНІ</h1>
+                                        <div class="full-page-home__text">
+                                            На підприємстві діє 3 протезні та взуттєва дільниця, на
+                                            яких працює близько 100 осіб. Це дає змогу в достатній
+                                            кількості виготовляти засоби реабілітації
+                                        </div>
+                                        <a href="#" class="full-page-home__button button"
+                                            >Замовити<span class="_icon-arrow"></span
+                                        ></a>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="full-page-home__slide swiper-slide">
+                                <section class="full-page-home__section">
+                                    <div class="full-page-home__image">
+                                        <img
+                                            class="full-page-home__image"
+                                            src="img/home/slider-3.jpeg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="full-page-home__content">
+                                        <h1 class="full-page-home__title">ОРТОПЕДИЧНЕ ВЗУТТЯ</h1>
+                                        <div class="full-page-home__text">
+                                            На підприємстві діє 3 протезні та взуттєва дільниця, на
+                                            яких працює близько 100 осіб. Це дає змогу в достатній
+                                            кількості виготовляти засоби реабілітації
+                                        </div>
+                                        <a href="#" class="full-page-home__button button"
+                                            >Замовити<span class="_icon-arrow"></span
+                                        ></a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="full-page-home__slides-names">
+                            <div class="full-page-home__slide-name">
+                                ПРОТЕЗНО-ОРТОПЕДИЧНІ ВИРОБИ
+                            </div>
+                            <div class="full-page-home__slide-name">КРІСЛА КОЛІСНІ</div>
+                            <div class="full-page-home__slide-name">ОРТОПЕДИЧНЕ ВЗУТТЯ</div>
+                        </div>
+                        <div class="swiper-pagination">
+                            <span class="swiper-pagination__bullet"></span>
+                        </div>
+                    </div>
+                </div> -->
 			<section class="home__benefits benefits-home">
 				<div class="benefits-home__container">
 					<div data-watch class="benefits-home__header">
@@ -597,7 +677,7 @@
 				</div>
 			</section>
 			<div class="home__map map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82352.68481537969!2d23.929835749030826!3d49.83265984474851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7c09109a57%3A0x4223c517012378e2!2z0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1702405872360!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82352.68481537969!2d23.929835749030826!3d49.83265984474851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7c09109a57%3A0x4223c517012378e2!2z0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1702405872360!5m2!1suk!2sua" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			<span data-goto=".wrapper" class="_nav-arrow"></span>
 		</main>
@@ -659,7 +739,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231215134801"></script>
+	<script src="js/app.min.js?_v=20231215222717"></script>
 </body>
 
 </html>
