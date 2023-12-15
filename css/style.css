@@ -827,6 +827,10 @@ textarea.input {
   background-color: #000;
 }
 
+._header-scroll .menu__link::before {
+  background-color: #000;
+}
+
 .icon-menu {
   display: none;
 }
@@ -1316,17 +1320,8 @@ body::after {
 }
 
 .card__image-wrapper {
-  position: relative;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
 }
 
 .card__image-wrapper img {
@@ -4497,6 +4492,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     border-top-color: #000;
   }
 
+  ._white .menu__link._header-catalog-button::after {
+    border-top-color: #000;
+  }
+
   .menu__link ._icon-daw {
     display: none;
   }
@@ -5378,6 +5377,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   ._white .icon-menu span,
   ._white .icon-menu::before,
   ._white .icon-menu::after {
+    background-color: #000;
+  }
+
+  ._header-scroll .icon-menu span,
+  ._header-scroll .icon-menu::before,
+  ._header-scroll .icon-menu::after {
     background-color: #000;
   }
 
