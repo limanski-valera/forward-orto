@@ -5179,35 +5179,45 @@
         });
     }
     function initSliders() {
-        if (document.querySelector(".full-page-home__slider")) new swiper_core_Swiper(".full-page-home__slider", {
-            modules: [ Mousewheel, EffectFade, Pagination ],
-            observer: true,
-            observeParents: true,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            threshold: 20,
-            speed: 800,
-            effect: "fade",
-            mousewheel: {
-                releaseOnEdges: true
-            },
-            pagination: {
-                el: ".full-page-home__slider .swiper-pagination",
-                clickable: true
-            },
-            on: {
-                init: function() {
-                    if (document.querySelector(".full-page-home__slide-name")) {
-                        const names = document.querySelectorAll(".full-page-home__slide-name");
-                        const bullets = document.querySelectorAll(".full-page-home__slider .swiper-pagination-bullet");
-                        bullets.forEach(((bullet, index) => {
-                            bullet.textContent = names[index].textContent;
-                        }));
-                    }
+        if (document.querySelector(".full-page-home__slider")) {
+            const homeSlider = new swiper_core_Swiper(".full-page-home__slider", {
+                modules: [ Mousewheel, EffectFade, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                threshold: 20,
+                speed: 800,
+                effect: "fade",
+                mousewheel: {
+                    releaseOnEdges: true
                 },
-                activeIndexChange: function() {}
-            }
-        });
+                enabled: false,
+                pagination: {
+                    el: ".full-page-home__slider .swiper-pagination",
+                    clickable: true
+                },
+                on: {
+                    init: function() {
+                        if (document.querySelector(".full-page-home__slide-name")) {
+                            const names = document.querySelectorAll(".full-page-home__slide-name");
+                            const bullets = document.querySelectorAll(".full-page-home__slider .swiper-pagination-bullet");
+                            bullets.forEach(((bullet, index) => {
+                                bullet.textContent = names[index].textContent;
+                            }));
+                        }
+                    },
+                    activeIndexChange: function() {}
+                }
+            });
+            document.addEventListener("watcherCallback", (function(e) {
+                const entry = e.detail.entry;
+                const targetElement = entry.target;
+                if (targetElement.classList.contains("full-page-home")) if (targetElement.classList.contains("_watcher-view")) setTimeout((() => {
+                    homeSlider.enable();
+                }), 1e3); else homeSlider.disable();
+            }));
+        }
         if (document.querySelector(".partners-home__slider")) new swiper_core_Swiper(".partners-home__slider", {
             modules: [ Navigation, Autoplay ],
             observer: true,
@@ -5368,12 +5378,6 @@
         }
         scrollWatcherIntersecting(entry, targetElement) {
             if (entry.isIntersecting) {
-                if (targetElement.classList.contains("full-page-home")) {
-                    setTimeout((() => {
-                        !targetElement.classList.contains("_watcher-view") ? targetElement.classList.add("_watcher-view") : null;
-                    }), 1e3);
-                    return;
-                }
                 !targetElement.classList.contains("_watcher-view") ? targetElement.classList.add("_watcher-view") : null;
                 this.scrollWatcherLogging(`Я бачу ${targetElement.classList}, додав клас _watcher-view`);
             } else {

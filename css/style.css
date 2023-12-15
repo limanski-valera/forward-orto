@@ -1394,9 +1394,7 @@ body::after {
 }
 
 ._scrolling-to-footer ._nav-arrow {
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
-  bottom: -1.875rem;
+  display: none;
 }
 
 ._nav-arrow:hover::before {
@@ -2064,23 +2062,17 @@ body::after {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 8.125rem;
+  width: 0rem;
   height: 0.125rem;
   background: -webkit-gradient(linear, left top, right top, from(#35797b), to(#72878f));
   background: linear-gradient(90deg, #35797b, #72878f);
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 2s;
+  transition: all 2s;
 }
 
 .footer__bottom._watcher-view::before {
   left: 0;
   width: 100%;
-  -webkit-transform: translate(0);
-      -ms-transform: translate(0);
-          transform: translate(0);
 }
 
 .footer__link {
@@ -2191,8 +2183,8 @@ body::after {
 ._watcher-view .footer-button-top {
   bottom: calc(100% + 1.25rem);
   opacity: 1;
-  -webkit-transition: bottom 1s 0.5s, opacity 1s 0.5s;
-  transition: bottom 1s 0.5s, opacity 1s 0.5s;
+  -webkit-transition: bottom 1s 1s, opacity 1s 1s;
+  transition: bottom 1s 1s, opacity 1s 1s;
 }
 
 @-webkit-keyframes top-button {
