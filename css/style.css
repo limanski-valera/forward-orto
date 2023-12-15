@@ -5819,6 +5819,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     display: none;
   }
 
+  .footer-button-top {
+    display: none;
+  }
+
   .main-block-home__title {
     letter-spacing: -1.5px;
   }
