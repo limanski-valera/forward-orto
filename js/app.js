@@ -7561,7 +7561,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 document.documentElement.addEventListener("wheel", watchWheel);
                 function watchWheel(e) {
                     changeWheelCounter(e);
-                    if (wheelCounter > 1e3 || wheelCounter < 0) {
+                    if (wheelCounter > 700 || wheelCounter < 0) {
                         removeWheelWatch();
                         setTimeout((() => {
                             addScrollWatcher();
@@ -7605,6 +7605,25 @@ PERFORMANCE OF THIS SOFTWARE.
             if (e.target.closest(".filters__open-button") && !document.documentElement.classList.contains("filter-opened")) document.documentElement.classList.add("filter-opened"); else if (e.target.closest(".filters__close-button") && document.documentElement.classList.contains("filter-opened")) document.documentElement.classList.remove("filter-opened");
         }));
     }
+    function initContactsPopup() {
+        if (document.querySelector(".header__call") || document.querySelector(".main-block-home__call")) {
+            function open() {
+                if (!document.documentElement.classList.contains("_open-contacts-popup")) document.documentElement.classList.add("_open-contacts-popup");
+            }
+            function toggle() {
+                document.documentElement.classList.toggle("_open-contacts-popup");
+            }
+            function close() {
+                if (document.documentElement.classList.contains("_open-contacts-popup")) document.documentElement.classList.remove("_open-contacts-popup");
+            }
+            document.addEventListener("click", (e => {
+                if (e.target.closest(".header__call")) toggle(); else if (e.target.closest(".main-block-home__call")) {
+                    open();
+                    document.documentElement.classList.add("menu-open", "lock");
+                } else if (!e.target.closest(".contacts-popup")) close();
+            }));
+        }
+    }
     document.addEventListener("DOMContentLoaded", (() => {
         initCustomTabs();
         initCatalog();
@@ -7612,6 +7631,7 @@ PERFORMANCE OF THIS SOFTWARE.
         if (document.documentElement.clientWidth < 768) catalogViews();
         filterInit();
         displayScroll();
+        initContactsPopup();
     }));
     window["FLS"] = true;
     isWebp();
