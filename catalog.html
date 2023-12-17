@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231216113644">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231217142525">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,8 @@
 					<div class="header__active">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<button class="header__button button button--green">
-							Завантажити каталог<span class="_icon-download"></span>
+							<span class="button__text">Завантажити каталог</span>
+							<span class="_icon-download"></span>
 						</button>
 						<button type="button" class="header__call _icon-phone"></button>
 						<div class="contacts-popup">
@@ -343,7 +344,7 @@
 		</header>
 
 		<main class="catalog">
-			<nav class="catalog__nav nav-catalog">
+			<nav data-watch data-watch-once class="catalog__nav nav-catalog">
 				<div class="nav-catalog__container">
 					<a href="#" class="nav-catalog__link-back">Назад</a>
 					<div class="nav-catalog__categories">
@@ -391,7 +392,7 @@
 					</div>
 				</div>
 			</nav>
-			<section class="catalog__header header-catalog">
+			<section data-watch data-watch-once class="catalog__header header-catalog">
 				<div class="header-catalog__container">
 					<h2 class="header-catalog__title title">Крісла колісні</h2>
 					<div class="header-catalog__text">
@@ -406,7 +407,7 @@
 					</div>
 				</div>
 			</section>
-			<form action="#" class="catalog__filters filters">
+			<form data-watch data-watch-once action="#" class="catalog__filters filters">
 				<div class="filters__container">
 					<button type="button" class="filters__open-button">Фільтри</button>
 					<div class="filters__top-row">
@@ -416,6 +417,7 @@
 						</div>
 						<div data-one-select class="filters__selects">
 							<div class="filters__info-item window-info-wrapper">
+								<button type="button" class="window-info-wrapper__icon _icon-info"></button>
 								<select multiple name="mobil">
 									<option value="" selected disabled>Мобільність</option>
 									<option value="2">Пункт №2</option>
@@ -426,27 +428,68 @@
 									<div class="window-info-wrapper__content">
 										<ol class="window-info-wrapper__list">
 											<li class="window-info-wrapper__list-item">
-												<div class="window-info-wrapper__title">1 - ша мобільність </div>
-												<div class="window-info-wrapper__text">Це найнижчий рівень мобільності, властивий для високих рівнів ампутації, парної ампутації або наявності супутніх захворювань. За наявності першого ступеня мобільності пацієнт здатний самостійно сидіти та стояти на протезі з опорою, проте ставати та сідати може лише за допомогою.</div>
+												<div class="window-info-wrapper__title">
+													1 - ша мобільність
+												</div>
+												<div class="window-info-wrapper__text">
+													Це найнижчий рівень мобільності, властивий
+													для високих рівнів ампутації, парної
+													ампутації або наявності супутніх
+													захворювань. За наявності першого ступеня
+													мобільності пацієнт здатний самостійно
+													сидіти та стояти на протезі з опорою, проте
+													ставати та сідати може лише за допомогою.
+												</div>
 											</li>
 											<li class="window-info-wrapper__list-item">
-												<div class="window-info-wrapper__title">2 - га мобільність </div>
-												<div class="window-info-wrapper__text">До цієї групи входять пацієнти з більш високим ступенем мобільності. Вони можуть все те, що і пацієнти першої групи, але також додатково можуть утримувати рівновагу на протезі та милицях, ходити, використовуючи милиці, підніматися та сідати без сторонньої допомоги.</div>
+												<div class="window-info-wrapper__title">
+													2 - га мобільність
+												</div>
+												<div class="window-info-wrapper__text">
+													До цієї групи входять пацієнти з більш
+													високим ступенем мобільності. Вони можуть
+													все те, що і пацієнти першої групи, але
+													також додатково можуть утримувати рівновагу
+													на протезі та милицях, ходити,
+													використовуючи милиці, підніматися та сідати
+													без сторонньої допомоги.
+												</div>
 											</li>
 											<li class="window-info-wrapper__list-item">
-												<div class="window-info-wrapper__title">3 - га мобільність </div>
-												<div class="window-info-wrapper__text">Для цієї міри можливе протезування за допомогою повних протезів ноги з тазостегновим шарніром - відносно протез, що рідко застосовується, оскільки ампутація з вичленуванням тазостегнового суглоба також досить рідко зустрічається операція.</div>
+												<div class="window-info-wrapper__title">
+													3 - га мобільність
+												</div>
+												<div class="window-info-wrapper__text">
+													Для цієї міри можливе протезування за
+													допомогою повних протезів ноги з
+													тазостегновим шарніром - відносно протез, що
+													рідко застосовується, оскільки ампутація з
+													вичленуванням тазостегнового суглоба також
+													досить рідко зустрічається операція.
+												</div>
 											</li>
 											<li class="window-info-wrapper__list-item">
-												<div class="window-info-wrapper__title">4 - а мобільність </div>
-												<div class="window-info-wrapper__text">Пацієнт із цим ступенем мобільності практично повністю відповідає здоровій людині.</div>
+												<div class="window-info-wrapper__title">
+													4 - а мобільність
+												</div>
+												<div class="window-info-wrapper__text">
+													Пацієнт із цим ступенем мобільності
+													практично повністю відповідає здоровій
+													людині.
+												</div>
 											</li>
 										</ol>
 										<div class="window-info-wrapper__text">
-											<p>Він може все те, що можуть представники І-ІІІ груп, а також:</p>
-											<p>ходити гористою або пересіченою місцевістю без обмежень;
-												ходити, змінюючи швидкість руху довільно та у будь-який момент;
-												користуватись протезом протягом практично необмеженого часу</p>
+											<p>
+												Він може все те, що можуть представники І-ІІІ
+												груп, а також:
+											</p>
+											<p>
+												ходити гористою або пересіченою місцевістю без
+												обмежень; ходити, змінюючи швидкість руху
+												довільно та у будь-який момент; користуватись
+												протезом протягом практично необмеженого часу
+											</p>
 										</div>
 										<a href="#" class="window-info-wrapper__link-more">Детальніше</a>
 									</div>
@@ -472,8 +515,12 @@
 							</select>
 						</div>
 						<div class="filters__actives">
-							<button type="submit" class="filters__button filters__button--submit">Показати результати</button>
-							<button type="button" class="filters__button filters__button--clear">Очистити</button>
+							<button type="submit" class="filters__button filters__button--submit">
+								Показати результати
+							</button>
+							<button type="button" class="filters__button filters__button--clear">
+								Очистити
+							</button>
 						</div>
 					</div>
 					<div class="filters__bottom-row">
@@ -500,7 +547,7 @@
 						<button class="body-catalog__view body-catalog__view--double"></button>
 					</div>
 					<div class="body-catalog__cards">
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -512,7 +559,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -524,7 +571,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -536,7 +583,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -548,7 +595,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -560,7 +607,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -572,7 +619,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -584,7 +631,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -596,7 +643,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -608,7 +655,7 @@
 								опори тіла (базове)...
 							</div>
 						</div>
-						<div class="body-catalog__card card">
+						<div data-watch data-watch-once class="body-catalog__card card">
 							<a href="#" class="card__image">
 								<div class="card__image-wrapper">
 									<picture><source srcset="img/products/product-01.webp" type="image/webp"><img src="img/products/product-01.png" alt="" /></picture>
@@ -634,126 +681,136 @@
 				</div>
 			</div>
 			<div class="catalog__info info-catalog">
-				<input type="checkbox" id="info-checker" class="info-catalog__checkbox" />
-				<div class="info-catalog__container">
-					<div class="info-catalog__big-text">
-						У травні 2013 року підприємство розпочало свою діяльність у сфері
-						забезпечення осіб з інвалідністю кріслами колісними – було відкрито цех
-						крупновузлового складання крісел колісних з комплектуючих матеріалів
-						виробництва компанії “MBL POLAND” (Польща).
+				<div data-showmore="size" class="info-catalog__container">
+					<div data-showmore-content="686" class="info-catalog__content">
+						<div class="info-catalog__big-text">
+							У травні 2013 року підприємство розпочало свою діяльність у сфері
+							забезпечення осіб з інвалідністю кріслами колісними – було відкрито
+							цех крупновузлового складання крісел колісних з комплектуючих
+							матеріалів виробництва компанії “MBL POLAND” (Польща).
+						</div>
+						<div class="info-catalog__text">
+							<p>
+								Досягненням 2014 року став початок власного виробництво дитячих
+								крісел колісних моделі CHILD 1. Спілкування з батьками, їх
+								поради, співпраця з реабілітаційними центрами “Джерело” та
+								“Надія”, наполеглива робота майстрів допомогли створити коляску,
+								яка відповідає усім європейським стандартам.
+							</p>
+							<p>
+								2015 рік: підприємство інтенсивно розвивається та працює над
+								вдосконаленням виробництва для досягнення високої якості.
+								Розроблено і впроваджено в виробництво нові дитячі візки CHILD 2
+								та CHILD 3, що поєднують у собі усі необхідні параметри та
+								складові, які спрощують їх використання та відповідають усім
+								європейським вимогам. Особливістю візка CHILD 2 є можливість
+								знімання сидіння, що дозволяє змінити положення дитини обличчям
+								до супроводжуючої особи, CHILD 3 – володіє абсолютно новою
+								системою складання (є можливість складання “тростинкою”, що
+								значно полегшує транспортування та використання). Також
+								підприємством було удосконалено візок CHILD 1, а саме: покращена
+								система сидіння, підніжки, елемент зміни кута нахилу спинки, а
+								також капюшона.
+							</p>
+						</div>
+						<ul class="info-catalog__list">
+							<li class="info-catalog__list-item">
+								2013 - У травні 2013 року підприємство розпочало свою діяльність
+								у сфері забезпечення осіб з інвалідністю кріслами колісними –
+								було відкрито цех крупновузлового складання крісел колісних з
+								комплектуючих матеріалів виробництва компанії “MBL POLAND”
+								(Польща).
+							</li>
+							<li class="info-catalog__list-item">
+								2014 - Досягненням 2014 року став початок власного виробництво
+								дитячих крісел колісних моделі CHILD 1. Спілкування з батьками,
+								їх поради, співпраця з реабілітаційними центрами “Джерело” та
+								“Надія”, наполеглива робота майстрів допомогли створити коляску,
+								яка відповідає усім європейським стандартам.
+							</li>
+							<li class="info-catalog__list-item">
+								2015 - Підприємство інтенсивно розвивається та працює над
+								вдосконаленням виробництва для досягнення високої якості.
+								Розроблено і впроваджено в виробництво нові дитячі візки CHILD 2
+								та CHILD 3, що поєднують у собі усі необхідні параметри та
+								складові, які спрощують їх використання та відповідають усім
+								європейським вимогам. Особливістю візка CHILD 2 є можливість
+								знімання сидіння, що дозволяє змінити положення дитини обличчям
+								до супроводжуючої особи, CHILD 3 – володіє абсолютно новою
+								системою складання (є можливість складання “тростинкою”, що
+								значно полегшує транспортування та використання). Також
+								підприємством було удосконалено візок CHILD 1, а саме: покращена
+								система сидіння, підніжки, елемент зміни кута нахилу спинки, а
+								також капюшона.
+							</li>
+						</ul>
+						<div class="info-catalog__big-text">
+							У травні 2013 року підприємство розпочало свою діяльність у сфері
+							забезпечення осіб з інвалідністю кріслами колісними – було відкрито
+							цех крупновузлового складання крісел колісних з комплектуючих
+							матеріалів виробництва компанії “MBL POLAND” (Польща).
+						</div>
+						<div class="info-catalog__text">
+							<p>
+								Досягненням 2014 року став початок власного виробництво дитячих
+								крісел колісних моделі CHILD 1. Спілкування з батьками, їх
+								поради, співпраця з реабілітаційними центрами “Джерело” та
+								“Надія”, наполеглива робота майстрів допомогли створити коляску,
+								яка відповідає усім європейським стандартам.
+							</p>
+							<p>
+								2015 рік: підприємство інтенсивно розвивається та працює над
+								вдосконаленням виробництва для досягнення високої якості.
+								Розроблено і впроваджено в виробництво нові дитячі візки CHILD 2
+								та CHILD 3, що поєднують у собі усі необхідні параметри та
+								складові, які спрощують їх використання та відповідають усім
+								європейським вимогам. Особливістю візка CHILD 2 є можливість
+								знімання сидіння, що дозволяє змінити положення дитини обличчям
+								до супроводжуючої особи, CHILD 3 – володіє абсолютно новою
+								системою складання (є можливість складання “тростинкою”, що
+								значно полегшує транспортування та використання). Також
+								підприємством було удосконалено візок CHILD 1, а саме: покращена
+								система сидіння, підніжки, елемент зміни кута нахилу спинки, а
+								також капюшона.
+							</p>
+						</div>
+						<ul class="info-catalog__list">
+							<li class="info-catalog__list-item">
+								2013 - У травні 2013 року підприємство розпочало свою діяльність
+								у сфері забезпечення осіб з інвалідністю кріслами колісними –
+								було відкрито цех крупновузлового складання крісел колісних з
+								комплектуючих матеріалів виробництва компанії “MBL POLAND”
+								(Польща).
+							</li>
+							<li class="info-catalog__list-item">
+								2014 - Досягненням 2014 року став початок власного виробництво
+								дитячих крісел колісних моделі CHILD 1. Спілкування з батьками,
+								їх поради, співпраця з реабілітаційними центрами “Джерело” та
+								“Надія”, наполеглива робота майстрів допомогли створити коляску,
+								яка відповідає усім європейським стандартам.
+							</li>
+							<li class="info-catalog__list-item">
+								2015 - Підприємство інтенсивно розвивається та працює над
+								вдосконаленням виробництва для досягнення високої якості.
+								Розроблено і впроваджено в виробництво нові дитячі візки CHILD 2
+								та CHILD 3, що поєднують у собі усі необхідні параметри та
+								складові, які спрощують їх використання та відповідають усім
+								європейським вимогам. Особливістю візка CHILD 2 є можливість
+								знімання сидіння, що дозволяє змінити положення дитини обличчям
+								до супроводжуючої особи, CHILD 3 – володіє абсолютно новою
+								системою складання (є можливість складання “тростинкою”, що
+								значно полегшує транспортування та використання). Також
+								підприємством було удосконалено візок CHILD 1, а саме: покращена
+								система сидіння, підніжки, елемент зміни кута нахилу спинки, а
+								також капюшона.
+							</li>
+						</ul>
 					</div>
-					<div class="info-catalog__text">
-						<p>
-							Досягненням 2014 року став початок власного виробництво дитячих
-							крісел колісних моделі CHILD 1. Спілкування з батьками, їх поради,
-							співпраця з реабілітаційними центрами “Джерело” та “Надія”,
-							наполеглива робота майстрів допомогли створити коляску, яка
-							відповідає усім європейським стандартам.
-						</p>
-						<p>
-							2015 рік: підприємство інтенсивно розвивається та працює над
-							вдосконаленням виробництва для досягнення високої якості. Розроблено
-							і впроваджено в виробництво нові дитячі візки CHILD 2 та CHILD 3, що
-							поєднують у собі усі необхідні параметри та складові, які спрощують
-							їх використання та відповідають усім європейським вимогам.
-							Особливістю візка CHILD 2 є можливість знімання сидіння, що дозволяє
-							змінити положення дитини обличчям до супроводжуючої особи, CHILD 3 –
-							володіє абсолютно новою системою складання (є можливість складання
-							“тростинкою”, що значно полегшує транспортування та використання).
-							Також підприємством було удосконалено візок CHILD 1, а саме:
-							покращена система сидіння, підніжки, елемент зміни кута нахилу
-							спинки, а також капюшона.
-						</p>
-					</div>
-					<ul class="info-catalog__list">
-						<li class="info-catalog__list-item">
-							2013 - У травні 2013 року підприємство розпочало свою діяльність у
-							сфері забезпечення осіб з інвалідністю кріслами колісними – було
-							відкрито цех крупновузлового складання крісел колісних з
-							комплектуючих матеріалів виробництва компанії “MBL POLAND” (Польща).
-						</li>
-						<li class="info-catalog__list-item">
-							2014 - Досягненням 2014 року став початок власного виробництво
-							дитячих крісел колісних моделі CHILD 1. Спілкування з батьками, їх
-							поради, співпраця з реабілітаційними центрами “Джерело” та “Надія”,
-							наполеглива робота майстрів допомогли створити коляску, яка
-							відповідає усім європейським стандартам.
-						</li>
-						<li class="info-catalog__list-item">
-							2015 - Підприємство інтенсивно розвивається та працює над
-							вдосконаленням виробництва для досягнення високої якості. Розроблено
-							і впроваджено в виробництво нові дитячі візки CHILD 2 та CHILD 3, що
-							поєднують у собі усі необхідні параметри та складові, які спрощують
-							їх використання та відповідають усім європейським вимогам.
-							Особливістю візка CHILD 2 є можливість знімання сидіння, що дозволяє
-							змінити положення дитини обличчям до супроводжуючої особи, CHILD 3 –
-							володіє абсолютно новою системою складання (є можливість складання
-							“тростинкою”, що значно полегшує транспортування та використання).
-							Також підприємством було удосконалено візок CHILD 1, а саме:
-							покращена система сидіння, підніжки, елемент зміни кута нахилу
-							спинки, а також капюшона.
-						</li>
-					</ul>
-					<div class="info-catalog__big-text">
-						У травні 2013 року підприємство розпочало свою діяльність у сфері
-						забезпечення осіб з інвалідністю кріслами колісними – було відкрито цех
-						крупновузлового складання крісел колісних з комплектуючих матеріалів
-						виробництва компанії “MBL POLAND” (Польща).
-					</div>
-					<div class="info-catalog__text">
-						<p>
-							Досягненням 2014 року став початок власного виробництво дитячих
-							крісел колісних моделі CHILD 1. Спілкування з батьками, їх поради,
-							співпраця з реабілітаційними центрами “Джерело” та “Надія”,
-							наполеглива робота майстрів допомогли створити коляску, яка
-							відповідає усім європейським стандартам.
-						</p>
-						<p>
-							2015 рік: підприємство інтенсивно розвивається та працює над
-							вдосконаленням виробництва для досягнення високої якості. Розроблено
-							і впроваджено в виробництво нові дитячі візки CHILD 2 та CHILD 3, що
-							поєднують у собі усі необхідні параметри та складові, які спрощують
-							їх використання та відповідають усім європейським вимогам.
-							Особливістю візка CHILD 2 є можливість знімання сидіння, що дозволяє
-							змінити положення дитини обличчям до супроводжуючої особи, CHILD 3 –
-							володіє абсолютно новою системою складання (є можливість складання
-							“тростинкою”, що значно полегшує транспортування та використання).
-							Також підприємством було удосконалено візок CHILD 1, а саме:
-							покращена система сидіння, підніжки, елемент зміни кута нахилу
-							спинки, а також капюшона.
-						</p>
-					</div>
-					<ul class="info-catalog__list">
-						<li class="info-catalog__list-item">
-							2013 - У травні 2013 року підприємство розпочало свою діяльність у
-							сфері забезпечення осіб з інвалідністю кріслами колісними – було
-							відкрито цех крупновузлового складання крісел колісних з
-							комплектуючих матеріалів виробництва компанії “MBL POLAND” (Польща).
-						</li>
-						<li class="info-catalog__list-item">
-							2014 - Досягненням 2014 року став початок власного виробництво
-							дитячих крісел колісних моделі CHILD 1. Спілкування з батьками, їх
-							поради, співпраця з реабілітаційними центрами “Джерело” та “Надія”,
-							наполеглива робота майстрів допомогли створити коляску, яка
-							відповідає усім європейським стандартам.
-						</li>
-						<li class="info-catalog__list-item">
-							2015 - Підприємство інтенсивно розвивається та працює над
-							вдосконаленням виробництва для досягнення високої якості. Розроблено
-							і впроваджено в виробництво нові дитячі візки CHILD 2 та CHILD 3, що
-							поєднують у собі усі необхідні параметри та складові, які спрощують
-							їх використання та відповідають усім європейським вимогам.
-							Особливістю візка CHILD 2 є можливість знімання сидіння, що дозволяє
-							змінити положення дитини обличчям до супроводжуючої особи, CHILD 3 –
-							володіє абсолютно новою системою складання (є можливість складання
-							“тростинкою”, що значно полегшує транспортування та використання).
-							Також підприємством було удосконалено візок CHILD 1, а саме:
-							покращена система сидіння, підніжки, елемент зміни кута нахилу
-							спинки, а також капюшона.
-						</li>
-					</ul>
+					<button hidden data-showmore-button type="button" class="info-catalog__button _icon-daw">
+						<span>Розгорнути</span>
+						<span>Згорнути</span>
+					</button>
 				</div>
-				<label class="info-catalog__button _icon-daw" for="info-checker">Розгорнути<span></span></label>
 			</div>
 		</main>
 		<footer class="footer">
@@ -814,7 +871,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231216113644"></script>
+	<script src="js/app.min.js?_v=20231217142525"></script>
 </body>
 
 </html>

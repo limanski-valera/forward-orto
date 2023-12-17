@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231216113644">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231217142525">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,8 @@
 					<div class="header__active">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<button class="header__button button button--green">
-							Завантажити каталог<span class="_icon-download"></span>
+							<span class="button__text">Завантажити каталог</span>
+							<span class="_icon-download"></span>
 						</button>
 						<button type="button" class="header__call _icon-phone"></button>
 						<div class="contacts-popup">
@@ -343,12 +344,12 @@
 		</header>
 
 		<main class="product">
-			<div class="product__breadcrumbs breadcrumbs">
+			<div data-watch data-watch-once class="product__breadcrumbs breadcrumbs">
 				<div class="breadcrumbs__container">
 					<a href="#" class="breadcrumbs__link">Назад до католгу продукції</a>
 				</div>
 			</div>
-			<div class="product__images images-product">
+			<div data-watch data-watch-once class="product__images images-product">
 				<div class="images-product__container">
 					<div class="images-product__slider swiper">
 						<div data-gallery class="images-product__wrapper swiper-wrapper">
@@ -377,7 +378,7 @@
 			</div>
 			<div class="product__body body-product">
 				<div class="body-product__container">
-					<div class="body-product__left">
+					<div data-watch data-watch-once class="body-product__left">
 						<div class="body-product__left-info">
 							<h2 class="body-product__title title">
 								Протези гомілки модульного типу
@@ -394,82 +395,225 @@
 							<a href="#" class="body-product__button button">Контакти</a>
 						</div>
 					</div>
-					<div class="body-product__right">
-						<div class="body-product__prosthetic-sizes prosthetic-sizes">
-							<div class="prosthetic-sizes__options options">
-								<div class="options__item">
-									<h3 class="body-product__label">Мобільність</h3>
-									<input id="o_1" class="options__input" type="radio" value="1" name="option" />
-									<label for="o_1" class="options__label"><span class="options__text">2 - га мобільність
-										</span></label>
+					<div data-watch data-watch-once class="body-product__right">
+						<div class="body-product__row prosthetic-sizes">
+							<div class="body-product__item item-body-product">
+								<h3 class="body-product__label">Мобільність</h3>
+								<div class="item-body-product__values">
+									<span class="item-body-product__value">2 - га мобільність</span>
 								</div>
-								<div class="options__item">
-									<h3 class="body-product__label">Частина ноги</h3>
-									<input id="o_2" class="options__input" type="radio" value="2" name="option" />
-									<label for="o_2" class="options__label"><span class="options__text">Гомілка</span></label>
+							</div>
+							<div class="body-product__item item-body-product">
+								<h3 class="body-product__label">Частина ноги</h3>
+								<div class="item-body-product__values">
+									<span class="item-body-product__value">Гомілка</span>
 								</div>
-								<div class="prosthetic-sizes__info">
-									*Може виготовлятися за індивідуальним замовленням
-								</div>
+							</div>
+							<div class="body-product__info">
+								*Може виготовлятися за індивідуальним замовленням
 							</div>
 						</div>
-						<div class="body-product__shoes-types shoes-types">
-							<div class="shoes-types__item">
+						<div class="body-product__row shoes-types">
+							<div class="body-product__item item-body-product">
 								<h3 class="body-product__label">Матеріал</h3>
-								<div class="options">
-									<div class="options__item">
-										<input id="m_1" class="options__input" type="radio" value="1" name="material" />
-										<label for="m_1" class="options__label"><span class="options__text">Шкіра</span></label>
-									</div>
-									<div class="options__item">
-										<input id="m_2" class="options__input" type="radio" value="2" name="material" />
-										<label for="m_2" class="options__label"><span class="options__text">Хутро</span></label>
-									</div>
+								<div class="item-body-product__values">
+									<span class="item-body-product__value">Шкіра</span>
+									<span class="item-body-product__value">Хутро</span>
 								</div>
 							</div>
-							<div class="shoes-types__item">
+							<div class="body-product__item item-body-product">
 								<h3 class="body-product__label">Підошва</h3>
-								<div class="options">
-									<div class="options__item">
-										<input id="sole_1" class="options__input" type="radio" value="1" name="sole" />
-										<label for="sole_1" class="options__label"><span class="options__text">Термопластомер</span></label>
-									</div>
-									<div class="options__item">
-										<input id="sole_2" class="options__input" type="radio" value="2" name="sole" />
-										<label for="sole_2" class="options__label"><span class="options__text">Пух</span></label>
-									</div>
-									<div class="options__item">
-										<input id="sole_3" class="options__input" type="radio" value="3" name="sole" />
-										<label for="sole_3" class="options__label"><span class="options__text">Демісезон</span></label>
-									</div>
+								<div class="item-body-product__values">
+									<span class="item-body-product__value">Термопластомер</span>
+									<span class="item-body-product__value">Пух</span>
+									<span class="item-body-product__value">Демісезон</span>
 								</div>
 							</div>
-							<div class="shoes-types__item">
+							<div class="body-product__item item-body-product">
 								<h3 class="body-product__label">Сезон</h3>
-								<div class="options">
-									<div class="options__item">
-										<input id="season_1" class="options__input" type="radio" value="1" name="season" />
-										<label for="season_1" class="options__label"><span class="options__text">Демісезон</span></label>
-									</div>
-									<div class="options__item">
-										<input id="season_2" class="options__input" type="radio" value="2" name="season" />
-										<label for="season_2" class="options__label"><span class="options__text">Вестна</span></label>
-									</div>
-									<div class="options__item">
-										<input id="season_3" class="options__input" type="radio" value="3" name="season" />
-										<label for="season_3" class="options__label"><span class="options__text">Літо</span></label>
-									</div>
+								<div class="item-body-product__values">
+									<span class="item-body-product__value">Демісезон</span>
+									<span class="item-body-product__value">Вестна</span>
+									<span class="item-body-product__value">Літо</span>
 								</div>
 							</div>
 						</div>
 						<div class="body-product__shoes-sizes shoes-sizes">
 							<div class="shoes-sizes__header">
 								<h3 class="body-product__label">Розміри взуття</h3>
-								<div class="shoes-sizes__info">
+								<div data-da=".body-product__shoes-sizes, 767.98" class="shoes-sizes__info">
 									*Може виготовлятися за індивідуальним замовленням
 								</div>
 							</div>
-							<a href="#" class="shoes-sizes__all">Таблиця розмірів</a>
+							<div class="dialog-window">
+								<button type="button" class="shoes-sizes__all dialog-window__open-btn">
+									Таблиця розмірів
+								</button>
+								<div class="dialog-window__body">
+									<div data-tabs class="dialog-window-tabs">
+										<nav data-tabs-titles class="dialog-window-tabs__navigation">
+											<button type="button" class="dialog-window-tabs__title _tab-active">
+												Таблиця розмірів
+											</button>
+											<button type="button" class="dialog-window-tabs__title">
+												Як знімати мірки
+											</button>
+										</nav>
+										<div data-tabs-body class="dialog-window-tabs__content">
+											<div class="dialog-window-tabs__body">
+												<div class="dialog-window-tabs__table">
+													<div class="dialog-window-tabs__header">
+														<div class="dialog-window-tabs__part">
+															UKR
+														</div>
+														<div class="dialog-window-tabs__part">
+															CM
+														</div>
+													</div>
+													<ul class="dialog-window-tabs__list">
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																33,5
+															</div>
+															<div class="dialog-window-tabs__part">
+																24
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																36
+															</div>
+															<div class="dialog-window-tabs__part">
+																24,5
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																36,5
+															</div>
+															<div class="dialog-window-tabs__part">
+																25
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																37
+															</div>
+															<div class="dialog-window-tabs__part">
+																25,5
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																37,5
+															</div>
+															<div class="dialog-window-tabs__part">
+																26
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																38
+															</div>
+															<div class="dialog-window-tabs__part">
+																26,5
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																38,5
+															</div>
+															<div class="dialog-window-tabs__part">
+																27
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																39
+															</div>
+															<div class="dialog-window-tabs__part">
+																27,5
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																39,5
+															</div>
+															<div class="dialog-window-tabs__part">
+																28
+															</div>
+														</li>
+														<li class="dialog-window-tabs__row">
+															<div class="dialog-window-tabs__part">
+																40
+															</div>
+															<div class="dialog-window-tabs__part">
+																28,5
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="dialog-window-tabs__body">
+												<div class="dialog-window-tabs__instruction size-instruction">
+													<div class="size-instruction__list">
+														<div class="size-instruction__item">
+															<span class="size-instruction__icon">
+																<img src="img/icons/check.svg" alt="" />
+															</span>
+															<div class="size-instruction__image">
+																<picture><source srcset="img/size-instruction/01.webp" type="image/webp"><img src="img/size-instruction/01.png" alt="" /></picture>
+															</div>
+														</div>
+														<div class="size-instruction__item">
+															<span class="size-instruction__icon">
+																<img src="img/icons/error.svg" alt="" />
+															</span>
+															<div class="size-instruction__image">
+																<picture><source srcset="img/size-instruction/02.webp" type="image/webp"><img src="img/size-instruction/02.png" alt="" /></picture>
+															</div>
+														</div>
+														<div class="size-instruction__item">
+															<span class="size-instruction__icon">
+																<img src="img/icons/error.svg" alt="" />
+															</span>
+															<div class="size-instruction__image">
+																<picture><source srcset="img/size-instruction/03.webp" type="image/webp"><img src="img/size-instruction/03.png" alt="" /></picture>
+															</div>
+														</div>
+													</div>
+													<div class="size-instruction__list">
+														<div class="size-instruction__item">
+															<span class="size-instruction__icon">
+																<img src="img/icons/check.svg" alt="" />
+															</span>
+															<div class="size-instruction__image">
+																<picture><source srcset="img/size-instruction/04.webp" type="image/webp"><img src="img/size-instruction/04.png" alt="" /></picture>
+															</div>
+														</div>
+														<div class="size-instruction__item">
+															<span class="size-instruction__icon">
+																<img src="img/icons/error.svg" alt="" />
+															</span>
+															<div class="size-instruction__image">
+																<picture><source srcset="img/size-instruction/05.webp" type="image/webp"><img src="img/size-instruction/05.png" alt="" /></picture>
+															</div>
+														</div>
+														<div class="size-instruction__item">
+															<span class="size-instruction__icon">
+																<img src="img/icons/error.svg" alt="" />
+															</span>
+															<div class="size-instruction__image">
+																<picture><source srcset="img/size-instruction/06.webp" type="image/webp"><img src="img/size-instruction/06.png" alt="" /></picture>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="shoes-sizes__options options">
 								<div class="options__item">
 									<input id="s_1" class="options__input" type="radio" value="40" name="size" />
@@ -528,7 +672,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="body-product__chair-sizes chair-sizes">
 							<h3 class="body-product__label">Фактичні розміри крісла</h3>
 							<div class="chair-sizes__list">
@@ -597,103 +740,172 @@
 									</div>
 								</div>
 							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title">
-									Порядок замовлення крісла
-									<span class="body-product__tippy _icon-info"></span>
-								</summary>
-								<div class="spollers__body">
-									<div class="body-product__content">
-										<ol class="body-product__list list-body-product">
-											<li class="list-body-product__item">
-												Ви подаєте заяву про забезпечення ТЗР з повним
-												пакетом документів
-												<ul class="list-body-product__sub-list">
-													<li class="list-body-product__sub-list-item">
-														до ЦНАП (центр надання адміністративних
-														послуг);
-													</li>
-													<li class="list-body-product__sub-list-item">
-														або до ОСЗН (орган соціального захисту
-														населення);
-													</li>
-													<li class="list-body-product__sub-list-item">
-														або через електронний кабінет особи з
-														інвалідністю (далі - електронний
-														кабінет)
-													</li>
-												</ul>
+							<div class="dialog-window dialog-window--dark">
+								<button type="button" class="dialog-window__open-btn _icon-info"></button>
+								<div class="dialog-window__body">
+									<div class="dialog-window__item">
+										<div class="dialog-window__label">
+											Ви зобов'язуєтеся:
+										</div>
+										<ul class="dialog-window__info-list">
+											<li class="dialog-window__item-info-list">
+												використовувати ТЗР за призначенням;
 											</li>
-											<li class="list-body-product__item">
-												Вас мають обов'язково ознайомити в ОСЗН / ЦНАП,
-												а в електронному кабінеті особисто з
-												<ul class="list-body-product__sub-list">
-													<li class="list-body-product__sub-list-item">
-														переліком підприємств, до яких особи
-														можуть звернутися з питань забезпечення
-														ТЗР;
-													</li>
-													<li class="list-body-product__sub-list-item">
-														каталогом ТЗР;
-													</li>
-													<li class="list-body-product__sub-list-item">
-														механізмом забезпечення ТЗР та отримання
-														компенсації;
-													</li>
-													<li class="list-body-product__sub-list-item">
-														інформацією щодо сумісності ТЗР;
-													</li>
-													<li class="list-body-product__sub-list-item">
-														інформацією щодо роботи електронного
-														кабінету
-													</li>
-												</ul>
+											<li class="dialog-window__item-info-list">
+												неухильно виконувати настанову щодо експлуатації
+												ТЗР;
 											</li>
-											<li class="list-body-product__item">
-												Ви отримуєте від ФСЗІ (Фонд соціального захисту
-												інвалідів) повідомлення про прийняте рішення та
-												сформоване електронне направлення через ЦНАП,
-												засоби телекомунікаційного зв'язку або через
-												електронний кабінет особи, або через Єдиний
-												державний веб-портал електронних послуг про
-												необхідність подання відсутніх документів.
+											<li class="dialog-window__item-info-list">
+												у разі несправності ТЗР надавати його
+												підприємству для ремонту;
 											</li>
-											<li class="list-body-product__item">
-												Ви звертаєтесь до підприємства, вибраного в
-												кроці 2, із заявою про намір забезпечення
-												особисто або через електронний кабінет
+											<li class="dialog-window__item-info-list">
+												у разі, якщо у Вас крісло колісне підвищеної
+												надійності та функціональності - після
+												закінчення гарантійного терміну його
+												експлуатації, кожні два роки надавати ТЗР
+												підприємтсву для його технічного обслуговування;
 											</li>
-											<li class="list-body-product__item">
-												Ви маєте право поміняти підприємство на інше
-												протягом 14 календарних днів з моменту звернення
-												до підприємства, у разі бажання
+										</ul>
+									</div>
+									<div class="dialog-window__item">
+										<div class="dialog-window__label">
+											Вам забороняється:
+										</div>
+										<p class="dialog-window__text">
+											Продавати, дарувати і передавати ДЗР протягом
+											строку, на який видано такий засіб (п. 4 Порядку,
+											затвердженого постановою КМУ від 05.04.12 №321 (зі
+											змінами)).
+										</p>
+									</div>
+									<div class="dialog-window__item">
+										<div class="dialog-window__label">Ви маєте право:</div>
+										<p class="dialog-window__text">
+											Відмовитися від замовленого виробу та замовити інший
+											у разі:
+										</p>
+										<ul class="dialog-window__info-list">
+											<li class="dialog-window__item-info-list">
+												зміни медичних показань, що підтверджуються
+												документально, до моменту видачі ТЗР (п. 27, 33
+												Порядку, затвердженого постановою КМУ від
+												05.04.12 №321 (зі змінами));
 											</li>
-											<li class="list-body-product__item">
-												На підприємстві Вам підбирають ТЗР та формують
-												замовлення для індивідуального засобу
-												реабілітації / анкету для серійного засобу
-												реабілітації. Ви перевіряєте та підписуєте
-												замовлення / анкету
+											<li class="dialog-window__item-info-list">
+												отримання ТЗР, що не відповідає вимогам,
+												зазначеним у анкеті (п. 33 Порядку,
+												затвердженого постановою КМУ від 05.04.12 №321
+												(зі змінами)).
 											</li>
-											<li class="list-body-product__item">
-												Ви підписуєте замовлення / анкету (повторно) та
-												акт приймання- передачі робіт після примірки
-												готового індивідуального засобу реабілітації,
-												якщо він Вам підійшов
-											</li>
-											<li class="list-body-product__item">
-												Ви отримуєте ТЗР, настанову щодо його
-												експлуатації та талон на гарантійний ремонт
-											</li>
-										</ol>
+										</ul>
+									</div>
+									<div class="dialog-window__bottom-row">
+										<p class="dialog-window__text dialog-window__text--light">
+											Офіційна інформація на сторінці міністерства
+											соціальної політики України
+										</p>
+										<a href="#" class="dialog-window__link _icon-link"></a>
 									</div>
 								</div>
-							</details>
+								<details class="spollers__item">
+									<summary class="spollers__title">
+										Порядок замовлення крісла
+									</summary>
+									<div class="spollers__body">
+										<div class="body-product__content">
+											<ol class="body-product__list list-body-product">
+												<li class="list-body-product__item">
+													Ви подаєте заяву про забезпечення ТЗР з
+													повним пакетом документів
+													<ul class="list-body-product__sub-list">
+														<li class="list-body-product__sub-list-item">
+															до ЦНАП (центр надання
+															адміністративних послуг);
+														</li>
+														<li class="list-body-product__sub-list-item">
+															або до ОСЗН (орган соціального
+															захисту населення);
+														</li>
+														<li class="list-body-product__sub-list-item">
+															або через електронний кабінет особи
+															з інвалідністю (далі - електронний
+															кабінет)
+														</li>
+													</ul>
+												</li>
+												<li class="list-body-product__item">
+													Вас мають обов'язково ознайомити в ОСЗН /
+													ЦНАП, а в електронному кабінеті особисто з
+													<ul class="list-body-product__sub-list">
+														<li class="list-body-product__sub-list-item">
+															переліком підприємств, до яких особи
+															можуть звернутися з питань
+															забезпечення ТЗР;
+														</li>
+														<li class="list-body-product__sub-list-item">
+															каталогом ТЗР;
+														</li>
+														<li class="list-body-product__sub-list-item">
+															механізмом забезпечення ТЗР та
+															отримання компенсації;
+														</li>
+														<li class="list-body-product__sub-list-item">
+															інформацією щодо сумісності ТЗР;
+														</li>
+														<li class="list-body-product__sub-list-item">
+															інформацією щодо роботи електронного
+															кабінету
+														</li>
+													</ul>
+												</li>
+												<li class="list-body-product__item">
+													Ви отримуєте від ФСЗІ (Фонд соціального
+													захисту інвалідів) повідомлення про прийняте
+													рішення та сформоване електронне направлення
+													через ЦНАП, засоби телекомунікаційного
+													зв'язку або через електронний кабінет особи,
+													або через Єдиний державний веб-портал
+													електронних послуг про необхідність подання
+													відсутніх документів.
+												</li>
+												<li class="list-body-product__item">
+													Ви звертаєтесь до підприємства, вибраного в
+													кроці 2, із заявою про намір забезпечення
+													особисто або через електронний кабінет
+												</li>
+												<li class="list-body-product__item">
+													Ви маєте право поміняти підприємство на інше
+													протягом 14 календарних днів з моменту
+													звернення до підприємства, у разі бажання
+												</li>
+												<li class="list-body-product__item">
+													На підприємстві Вам підбирають ТЗР та
+													формують замовлення для індивідуального
+													засобу реабілітації / анкету для серійного
+													засобу реабілітації. Ви перевіряєте та
+													підписуєте замовлення / анкету
+												</li>
+												<li class="list-body-product__item">
+													Ви підписуєте замовлення / анкету (повторно)
+													та акт приймання- передачі робіт після
+													примірки готового індивідуального засобу
+													реабілітації, якщо він Вам підійшов
+												</li>
+												<li class="list-body-product__item">
+													Ви отримуєте ТЗР, настанову щодо його
+													експлуатації та талон на гарантійний ремонт
+												</li>
+											</ol>
+										</div>
+									</div>
+								</details>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="product__testimonials testimonials">
+			<div data-watch data-watch-once class="product__testimonials testimonials">
 				<div class="testimonials__container">
 					<div class="testimonials__slider swiper">
 						<div class="testimonials__wrapper swiper-wrapper">
@@ -908,7 +1120,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20231216113644"></script>
+	<script src="js/app.min.js?_v=20231217142525"></script>
 </body>
 
 </html>

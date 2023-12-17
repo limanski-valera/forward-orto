@@ -382,6 +382,113 @@
         bodyUnlock();
         document.documentElement.classList.remove("menu-open");
     }
+    function showMore() {
+        window.addEventListener("load", (function(e) {
+            const showMoreBlocks = document.querySelectorAll("[data-showmore]");
+            let showMoreBlocksRegular;
+            let mdQueriesArray;
+            if (showMoreBlocks.length) {
+                showMoreBlocksRegular = Array.from(showMoreBlocks).filter((function(item, index, self) {
+                    return !item.dataset.showmoreMedia;
+                }));
+                showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                document.addEventListener("click", showMoreActions);
+                window.addEventListener("resize", showMoreActions);
+                mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
+                if (mdQueriesArray && mdQueriesArray.length) {
+                    mdQueriesArray.forEach((mdQueriesItem => {
+                        mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                            initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                        }));
+                    }));
+                    initItemsMedia(mdQueriesArray);
+                }
+            }
+            function initItemsMedia(mdQueriesArray) {
+                mdQueriesArray.forEach((mdQueriesItem => {
+                    initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                }));
+            }
+            function initItems(showMoreBlocks, matchMedia) {
+                showMoreBlocks.forEach((showMoreBlock => {
+                    initItem(showMoreBlock, matchMedia);
+                }));
+            }
+            function initItem(showMoreBlock, matchMedia = false) {
+                showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
+                let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
+                let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
+                showMoreContent = Array.from(showMoreContent).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                showMoreButton = Array.from(showMoreButton).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                if (matchMedia.matches || !matchMedia) if (hiddenHeight < getOriginalHeight(showMoreContent)) {
+                    _slideUp(showMoreContent, 0, showMoreBlock.classList.contains("_showmore-active") ? getOriginalHeight(showMoreContent) : hiddenHeight);
+                    showMoreButton.hidden = false;
+                } else {
+                    _slideDown(showMoreContent, 0, hiddenHeight);
+                    showMoreButton.hidden = true;
+                } else {
+                    _slideDown(showMoreContent, 0, hiddenHeight);
+                    showMoreButton.hidden = true;
+                }
+            }
+            function getHeight(showMoreBlock, showMoreContent) {
+                let hiddenHeight = 0;
+                const showMoreType = showMoreBlock.dataset.showmore ? showMoreBlock.dataset.showmore : "size";
+                const rowGap = parseFloat(getComputedStyle(showMoreContent).rowGap) ? parseFloat(getComputedStyle(showMoreContent).rowGap) : 0;
+                if (showMoreType === "items") {
+                    const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
+                    const showMoreItems = showMoreContent.children;
+                    for (let index = 1; index < showMoreItems.length; index++) {
+                        const showMoreItem = showMoreItems[index - 1];
+                        const marginTop = parseFloat(getComputedStyle(showMoreItem).marginTop) ? parseFloat(getComputedStyle(showMoreItem).marginTop) : 0;
+                        const marginBottom = parseFloat(getComputedStyle(showMoreItem).marginBottom) ? parseFloat(getComputedStyle(showMoreItem).marginBottom) : 0;
+                        hiddenHeight += showMoreItem.offsetHeight + marginTop;
+                        if (index == showMoreTypeValue) break;
+                        hiddenHeight += marginBottom;
+                    }
+                    rowGap ? hiddenHeight += (showMoreTypeValue - 1) * rowGap : null;
+                } else {
+                    const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 150;
+                    hiddenHeight = showMoreTypeValue;
+                }
+                return hiddenHeight;
+            }
+            function getOriginalHeight(showMoreContent) {
+                let parentHidden;
+                let hiddenHeight = showMoreContent.offsetHeight;
+                showMoreContent.style.removeProperty("height");
+                if (showMoreContent.closest(`[hidden]`)) {
+                    parentHidden = showMoreContent.closest(`[hidden]`);
+                    parentHidden.hidden = false;
+                }
+                let originalHeight = showMoreContent.offsetHeight;
+                parentHidden ? parentHidden.hidden = true : null;
+                showMoreContent.style.height = `${hiddenHeight}px`;
+                return originalHeight;
+            }
+            function showMoreActions(e) {
+                const targetEvent = e.target;
+                const targetType = e.type;
+                if (targetType === "click") {
+                    if (targetEvent.closest("[data-showmore-button]")) {
+                        const showMoreButton = targetEvent.closest("[data-showmore-button]");
+                        const showMoreBlock = showMoreButton.closest("[data-showmore]");
+                        const showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
+                        const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : "500";
+                        const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                        if (!showMoreContent.classList.contains("_slide")) {
+                            showMoreBlock.classList.contains("_showmore-active") ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
+                            showMoreBlock.classList.toggle("_showmore-active");
+                        }
+                    }
+                } else if (targetType === "resize") {
+                    showMoreBlocksRegular && showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                    mdQueriesArray && mdQueriesArray.length ? initItemsMedia(mdQueriesArray) : null;
+                }
+            }
+        }));
+    }
     function functions_FLS(message) {
         setTimeout((() => {
             if (window.FLS) console.log(message);
@@ -7477,7 +7584,6 @@ PERFORMANCE OF THIS SOFTWARE.
                     document.documentElement.classList.toggle("catalog-open");
                     document.documentElement.classList.toggle("lock");
                 } else if (!e.target.closest(".header") && document.documentElement.classList.contains("catalog-open")) {
-                    console.log("click");
                     document.documentElement.classList.remove("catalog-open");
                     document.documentElement.classList.remove("lock");
                 }
@@ -7572,7 +7678,6 @@ PERFORMANCE OF THIS SOFTWARE.
                     wheelCounter += e.deltaY;
                 }
                 function removeWheelWatch() {
-                    console.log("remove");
                     document.documentElement.removeEventListener("wheel", watchWheel);
                     document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.remove("_slide-focus") : 0;
                 }
@@ -7624,6 +7729,33 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
         }
     }
+    function initCatalogInfoDialog() {
+        if (document.querySelector(".window-info-wrapper")) {
+            function toggle() {
+                document.querySelector(".window-info-wrapper").classList.toggle("_open-info");
+            }
+            function remove() {
+                if (document.querySelector(".window-info-wrapper").classList.contains("_open-info")) document.querySelector(".window-info-wrapper").classList.remove("_open-info");
+            }
+            document.addEventListener("click", (e => {
+                if (e.target.closest(".window-info-wrapper__icon")) toggle(); else if (!e.target.closest(".window-info-wrapper__body") && document.querySelector(".window-info-wrapper").classList.contains("_open-info")) remove();
+            }));
+        }
+    }
+    function initProductsDialogs() {
+        if (document.querySelector(".dialog-window")) {
+            const items = document.querySelectorAll(".dialog-window");
+            function toggle(wrapper) {
+                wrapper.classList.toggle("_dialog-open");
+            }
+            function clearClasses() {
+                items.forEach((item => item.classList.contains("_dialog-open") ? item.classList.remove("_dialog-open") : item));
+            }
+            document.addEventListener("click", (e => {
+                if (e.target.closest(".dialog-window__open-btn") && e.target.closest(".dialog-window")) toggle(e.target.closest(".dialog-window")); else if (!e.target.closest(".dialog-window__body")) clearClasses();
+            }));
+        }
+    }
     document.addEventListener("DOMContentLoaded", (() => {
         initCustomTabs();
         initCatalog();
@@ -7632,8 +7764,10 @@ PERFORMANCE OF THIS SOFTWARE.
         filterInit();
         displayScroll();
         initContactsPopup();
+        initCatalogInfoDialog();
+        initProductsDialogs();
     }));
-    window["FLS"] = true;
+    window["FLS"] = false;
     isWebp();
     addTouchClass();
     addLoadedClass();
@@ -7641,6 +7775,7 @@ PERFORMANCE OF THIS SOFTWARE.
     fullVHfix();
     spollers();
     tabs();
+    showMore();
     pageNavigation();
     headerScroll();
     digitsCounter();
