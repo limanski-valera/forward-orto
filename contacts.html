@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Корисна інформація</title>
+	<title>Контакти</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -343,283 +343,96 @@
 			</div>
 		</header>
 
-		<main class="information">
-			<section data-watch data-watch-once class="information__main-block simple-main-block">
-				<div class="simple-main-block__breadcrumbs breadcrumbs">
-					<div class="breadcrumbs__container">
-						<a href="#" class="breadcrumbs__link">Назад</a>
+		<main class="page-contacts">
+			<section class="page-contacts__main-block main-block-contacts">
+				<div class="main-block-contacts__container">
+					<a href="#" class="main-block-contacts__link-back">Назад</a>
+					<h1 class="main-block-contacts__title">Контакти</h1>
+					<div class="main-block-contacts__body">
+						<div class="main-block-contacts__info">
+							<div class="main-block-contacts__part-info">
+								<div class="main-block-contacts__label">
+									Безкоштовна гаряча лінія
+								</div>
+								<a href="tel:0800305333" class="main-block-contacts__link main-block-contacts__link--big">0 800 305 333
+								</a>
+							</div>
+							<div class="main-block-contacts__part-info">
+								<div class="main-block-contacts__item">
+									<div class="main-block-contacts__label">Головний офіс</div>
+									<a href="#" class="main-block-contacts__link _icon-location">46027, Україна, м. Тернопіль, вул. Володимира
+										Лучаковського 6, оф. 261
+									</a>
+									<a href="tel:+380676530680" class="main-block-contacts__link main-block-contacts__link--underline">+38 (067) 653-06-80
+									</a>
+									<a href="tel:+380352513303" class="main-block-contacts__link main-block-contacts__link--underline">+38 (0352) 51-33-03
+									</a>
+								</div>
+								<div class="main-block-contacts__item">
+									<a href="#" class="main-block-contacts__link _icon-location">46009, Україна, м. Тернопіль, вул. Гетьмана Івана
+										Виговського 26, оф. 16
+									</a>
+									<a href="tel:+380676530780" class="main-block-contacts__link main-block-contacts__link--underline">+38 (067) 653-07-80
+									</a>
+									<a href="tel:+380352512929" class="main-block-contacts__link main-block-contacts__link--underline">
+										+38 (0352) 51-29-29
+									</a>
+								</div>
+							</div>
+						</div>
+						<form action="#" class="main-block-contacts__form contacts-form">
+							<div class="contacts-form__item">
+								<div class="contacts-form__label">Відділ</div>
+								<div class="contacts-form__input-wrapper">
+									<div class="contacts-form__select-wrapper">
+										<select>
+											<option value="" selected>
+												Оберить відповідний відділ
+											</option>
+											<option value="1">Пункт №2</option>
+											<option value="2">Пункт №3</option>
+											<option value="3">Пункт №4</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="contacts-form__item">
+								<div class="contacts-form__label">Імʼя</div>
+								<div class="contacts-form__input-wrapper">
+									<input autocomplete="off" type="text" placeholder="Ваше імʼя" class="contacts-form__input" />
+								</div>
+							</div>
+							<div class="contacts-form__item">
+								<div class="contacts-form__label">Номер телфону</div>
+								<div class="contacts-form__input-wrapper">
+									<input autocomplete="off" type="tel" placeholder="+38 ( _ _ _ ) - _ _ _ - _ _ - _ _" class="contacts-form__input" />
+								</div>
+							</div>
+							<div class="contacts-form__item">
+								<div class="contacts-form__label">Електронна пошта</div>
+								<div class="contacts-form__input-wrapper">
+									<input autocomplete="off" type="tel" placeholder="example@mail.com" class="contacts-form__input" />
+								</div>
+							</div>
+							<div class="contacts-form__item">
+								<div class="contacts-form__label">Електронна пошта</div>
+								<div class="contacts-form__input-wrapper">
+									<textarea class="contacts-form__input contacts-form__input--textarea" placeholder="Вкажіть ваш коментар"></textarea>
+								</div>
+							</div>
+							<div class="contacts-form__checkbox checkbox-contacts-form">
+								<input id="c_1" class="checkbox-contacts-form__input" type="checkbox" value="1" />
+								<label for="c_1" class="checkbox-contacts-form__label">Я згоден з
+									<a href="#" class="checkbox-contacts-form__link"> Умовами</a></label>
+							</div>
+							<button class="contacts-form__button button button--green">
+								<span class="button__text">Надіслати</span>
+								<span class="_icon-arrow"></span>
+							</button>
+						</form>
 					</div>
-				</div>
-				<div class="simple-main-block__container">
-					<h1 class="simple-main-block__title">Корисна інформація</h1>
 				</div>
 			</section>
-			<form data-watch data-watch-once action="#" class="information__filters filters filters--dark">
-				<div class="filters__container">
-					<button type="button" class="filters__open-button">Фільтри</button>
-					<div class="filters__top-row">
-						<div class="filters__header">
-							<div class="filters__label">Фільтри</div>
-							<button type="button" class="filters__close-button">Закрити</button>
-						</div>
-						<div data-one-select class="filters__selects">
-							<select multiple name="sole">
-								<option value="" selected disabled>Категорія</option>
-								<option value="2">Пункт №2</option>
-								<option value="3">Пункт №3</option>
-								<option value="4">Пункт №4</option>
-							</select>
-							<select multiple name="season">
-								<option value="" selected disabled>Тематика</option>
-								<option value="2">Пункт №2</option>
-								<option value="3">Пункт №3</option>
-								<option value="4">Пункт №4</option>
-							</select>
-						</div>
-						<div class="filters__searching">
-							<input type="text" class="filters__input-searching" placeholder="Пошук" />
-						</div>
-						<div class="filters__actives">
-							<button type="submit" class="filters__button filters__button--submit">
-								Показати результати
-							</button>
-							<button type="button" class="filters__button filters__button--clear">
-								Очистити
-							</button>
-						</div>
-					</div>
-					<div class="filters__bottom-row">
-						<div class="filters__selected-items">
-							<button type="button" class="filters__selected-item">
-								Засоби реабілітації<span class="filters__decor-selected-item"></span>
-							</button>
-							<button type="button" class="filters__selected-item">
-								Спорт та Lifestyle<span class="filters__decor-selected-item"></span>
-							</button>
-							<button type="button" class="filters__selected-item">
-								Харчування<span class="filters__decor-selected-item"></span>
-							</button>
-						</div>
-						<div class="filters__clear-block">
-							<button type="button" class="filters__selected-item filters__selected-item--clear">
-								Очистити фільтр<span class="filters__decor-selected-item"></span>
-							</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			<div class="information__body body-information">
-				<div class="body-information__container">
-					<div class="body-information__list">
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-						<article data-watch data-watch-once class="body-information__item article-preview">
-							<a href="#" class="article-preview__image">
-								<picture><source srcset="img/article-01.webp" type="image/webp"><img src="img/article-01.jpeg" alt="" /></picture>
-							</a>
-							<div class="article-preview__body">
-								<div class="article-preview__date">23 жов. 2023</div>
-								<h3 class="article-preview__title">
-									<a href="#">Особливості додзвону на гарячу лінію у воєнний час</a>
-								</h3>
-							</div>
-							<div class="article-preview__tags-list">
-								<a href="#" class="article-preview__tag">Засоби реабілітації</a>
-								<a href="#" class="article-preview__tag">Спорт та Lifestyle</a>
-								<a href="#" class="article-preview__tag">Харчування</a>
-							</div>
-						</article>
-					</div>
-					<div class="body-information__pagination">
-						<button class="body-information__arrow body-information__arrow--prev _icon-arrow" disabled></button>
-						<div class="body-information__pages">
-							<button class="body-information__item-pagination _active">1</button>
-							<button class="body-information__item-pagination">2</button>
-							<button class="body-information__item-pagination">...</button>
-							<button class="body-information__item-pagination">4</button>
-						</div>
-						<button class="body-information__arrow body-information__arrow--next _icon-arrow"></button>
-					</div>
-				</div>
-			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -678,6 +491,35 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+	<div id="popup-vacancies" aria-hidden="true" class="popup popup-product">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<form action="#" class="popup__form form-popup">
+						<div class="form-popup__item item-form-popup">
+							Імʼя
+							<input type="text" name="Імʼя" placeholder="Вкажіть ваше імʼя" class="item-form-popup__input input" />
+						</div>
+						<div class="form-popup__item item-form-popup">
+							Номер телeфону
+							<input type="tel" name="Телефон" placeholder="+38 ( _ _ _ ) - _ _ _ - _ _ - _ _" class="item-form-popup__input input" />
+						</div>
+						<div class="form-popup__item item-form-popup">
+							Електронна пошта
+							<input type="email" name="Телефон" placeholder="example@mail.com" class="item-form-popup__input input" />
+						</div>
+						<div class="form-popup__file-wrapper file-wrapper">
+							<label class="file-wrapper__button _icon-clip">
+								<input class="file-wrapper__input" type="file" /><span class="file-wrapper__text">Прикріпити резюме</span></label>
+							<span class="file-wrapper__file-name">Имя файла</span>
+						</div>
+						<button class="form-popup__button" type="submit">Надіслати</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script src="js/app.min.js?_v=20231218114003"></script>
 </body>

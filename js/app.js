@@ -5185,6 +5185,23 @@
             },
             on: {}
         });
+        if (document.querySelector(".specialist__slider")) {
+            const slides = document.querySelectorAll(".specialist__slider");
+            slides.forEach((slide => {
+                new swiper_core_Swiper(slide, {
+                    modules: [ Pagination ],
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    speed: 800,
+                    pagination: {
+                        el: slide.querySelector(".specialist__pagination"),
+                        clickable: true
+                    }
+                });
+            }));
+        }
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -7659,28 +7676,20 @@ PERFORMANCE OF THIS SOFTWARE.
                 if (slidePosition < 0 && slidePosition > -50) focusSlide(slideSelector, index);
             }
             function focusSlide(slideSelector, index) {
-                window.removeEventListener("scroll", scrollWatcherCallback);
-                !document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.add("_slide-focus") : 0;
-                gotoblock_gotoBlock(slideSelector);
-                let wheelCounter = 10;
-                changeActiveTitle(index);
-                document.documentElement.addEventListener("wheel", watchWheel);
-                function watchWheel(e) {
-                    changeWheelCounter(e);
-                    if (wheelCounter > 700 || wheelCounter < 0) {
-                        removeWheelWatch();
-                        setTimeout((() => {
-                            addScrollWatcher();
-                        }), 100);
-                    }
-                }
-                function changeWheelCounter(e) {
-                    wheelCounter += e.deltaY;
-                }
-                function removeWheelWatch() {
-                    document.documentElement.removeEventListener("wheel", watchWheel);
+                function removeFocusSlide() {
                     document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.remove("_slide-focus") : 0;
                 }
+                window.removeEventListener("scroll", scrollWatcherCallback);
+                !document.documentElement.classList.contains("lock") ? document.documentElement.classList.add("lock") : 0;
+                !document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.add("_slide-focus") : 0;
+                gotoblock_gotoBlock(slideSelector);
+                changeActiveTitle(index);
+                setTimeout((() => {
+                    document.documentElement.classList.contains("lock") ? document.documentElement.classList.remove("lock") : 0;
+                    addScrollWatcher();
+                    document.addEventListener("wheel", removeFocusSlide);
+                    document.removeEventListener("wheel", removeFocusSlide);
+                }), 1e3);
             }
             addScrollWatcher();
         }
@@ -7756,6 +7765,34 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
         }
     }
+    function uploadFile() {
+        if (document.querySelector("input[type=file]")) {
+            const fileInput = document.querySelector("input[type=file]");
+            const wrapper = fileInput.closest(".file-wrapper");
+            const nameWrapper = wrapper.querySelector(".file-wrapper__file-name");
+            fileInput.addEventListener("change", (e => {
+                if (e.target.value) {
+                    !wrapper.classList.contains("_selected") ? wrapper.classList.add("_selected") : 0;
+                    nameWrapper.textContent = e.target.value.replace(/.*\\/, "");
+                } else if (wrapper.classList.contains("_selected")) wrapper.classList.remove("_selected");
+            }));
+        }
+    }
+    function initCertificatesPopups() {
+        if (document.querySelector(".certificates__show-btn") && document.querySelector(".specialist")) {
+            function openCertificates(target) {
+                target.closest(".specialist").classList.add("_certificates-opened");
+                document.documentElement.classList.add("lock");
+            }
+            function closeCertificates(target) {
+                target.closest(".specialist").classList.remove("_certificates-opened");
+                document.documentElement.classList.remove("lock");
+            }
+            document.addEventListener("click", (e => {
+                if (e.target.closest(".certificates__show-btn")) openCertificates(e.target); else if (e.target.closest(".popup-certificates__close-btn") || e.target.closest(".popup-certificates__wrapper") && !e.target.closest(".popup-certificates__content")) closeCertificates(e.target);
+            }));
+        }
+    }
     document.addEventListener("DOMContentLoaded", (() => {
         initCustomTabs();
         initCatalog();
@@ -7766,6 +7803,8 @@ PERFORMANCE OF THIS SOFTWARE.
         initContactsPopup();
         initCatalogInfoDialog();
         initProductsDialogs();
+        uploadFile();
+        initCertificatesPopups();
     }));
     window["FLS"] = false;
     isWebp();
