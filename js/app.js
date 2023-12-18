@@ -7648,6 +7648,8 @@ PERFORMANCE OF THIS SOFTWARE.
         if (document.querySelector(".full-page-home") && !document.documentElement.classList.contains("touch") && document.documentElement.clientWidth > 991.98) {
             const slides = document.querySelectorAll(".full-page-home");
             const titles = document.querySelectorAll(".titles-home-slides__title");
+            const startSliderPosition = slides[0].getBoundingClientRect().top + scrollY;
+            const endSLiderPosition = slides[slides.length - 1].getBoundingClientRect().top + scrollY;
             const slidesClasses = {
                 0: ".full-page-home--first",
                 1: ".full-page-home--second",
@@ -7658,39 +7660,69 @@ PERFORMANCE OF THIS SOFTWARE.
                     if (titleIndex === activeIndex) !title.classList.contains("_active") ? title.classList.add("_active") : title; else if (title.classList.contains("_active")) title.classList.remove("_active");
                 }));
             }
+            function addScrollWatcher() {
+                window.addEventListener("scroll", scrollWatcherCallback);
+            }
+            function scrollWatcherCallback() {
+                if (scrollY > startSliderPosition && scrollY < endSLiderPosition) {
+                    console.log(slides[0].getBoundingClientRect().top);
+                    let activeSlide = slides[0].getBoundingClientRect().top > -500 ? 0 : slides.length - 1;
+                    focusSlider(activeSlide);
+                }
+            }
+            function focusSlider(index) {
+                let slideIndex = index;
+                function focusOnSlide(nextSlideIndex) {
+                    gotoblock_gotoBlock(slidesClasses[nextSlideIndex]);
+                    changeActiveTitle(nextSlideIndex);
+                }
+                function sliderWheel(e) {
+                    if (e.deltaY > 10) {
+                        document.removeEventListener("wheel", sliderWheel, {
+                            passive: false
+                        });
+                        slideIndex++;
+                        if (slideIndex < slides.length) {
+                            focusOnSlide(slideIndex);
+                            setTimeout((() => {
+                                document.addEventListener("wheel", sliderWheel, {
+                                    passive: false
+                                });
+                            }), 1e3);
+                        } else exitSlider();
+                    } else if (e.deltaY < -10) {
+                        document.removeEventListener("wheel", sliderWheel, {
+                            passive: false
+                        });
+                        slideIndex--;
+                        if (slideIndex > -1) {
+                            focusOnSlide(slideIndex);
+                            setTimeout((() => {
+                                document.addEventListener("wheel", sliderWheel, {
+                                    passive: false
+                                });
+                            }), 1e3);
+                        } else exitSlider();
+                    }
+                }
+                !document.documentElement.classList.contains("lock") ? document.documentElement.classList.add("lock") : 0;
+                !document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.add("_slide-focus") : 0;
+                focusOnSlide(slideIndex);
+                window.removeEventListener("scroll", scrollWatcherCallback);
+                document.addEventListener("wheel", sliderWheel, {
+                    passive: false
+                });
+            }
+            function exitSlider() {
+                document.documentElement.classList.contains("lock") ? document.documentElement.classList.remove("lock") : 0;
+                document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.remove("_slide-focus") : 0;
+                addScrollWatcher();
+            }
             titles.forEach(((title, index) => {
                 title.addEventListener("click", (() => {
                     changeActiveTitle(index);
                 }));
             }));
-            function addScrollWatcher() {
-                window.addEventListener("scroll", scrollWatcherCallback);
-            }
-            function scrollWatcherCallback() {
-                slides.forEach(((slide, index) => {
-                    watchForSlide(slide, slidesClasses[index], index);
-                }));
-            }
-            function watchForSlide(slide, slideSelector, index) {
-                const slidePosition = slide.getBoundingClientRect().top;
-                if (slidePosition < 0 && slidePosition > -50) focusSlide(slideSelector, index);
-            }
-            function focusSlide(slideSelector, index) {
-                function removeFocusSlide() {
-                    document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.remove("_slide-focus") : 0;
-                }
-                window.removeEventListener("scroll", scrollWatcherCallback);
-                !document.documentElement.classList.contains("lock") ? document.documentElement.classList.add("lock") : 0;
-                !document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.add("_slide-focus") : 0;
-                gotoblock_gotoBlock(slideSelector);
-                changeActiveTitle(index);
-                setTimeout((() => {
-                    document.documentElement.classList.contains("lock") ? document.documentElement.classList.remove("lock") : 0;
-                    addScrollWatcher();
-                    document.addEventListener("wheel", removeFocusSlide);
-                    document.removeEventListener("wheel", removeFocusSlide);
-                }), 1e3);
-            }
             addScrollWatcher();
         }
     }
