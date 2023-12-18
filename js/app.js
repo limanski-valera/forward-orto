@@ -7665,8 +7665,7 @@ PERFORMANCE OF THIS SOFTWARE.
             }
             function scrollWatcherCallback() {
                 if (scrollY > startSliderPosition && scrollY < endSLiderPosition) {
-                    console.log(slides[0].getBoundingClientRect().top);
-                    let activeSlide = slides[0].getBoundingClientRect().top > -500 ? 0 : slides.length - 1;
+                    let activeSlide = slides[0].getBoundingClientRect().top > -700 ? 0 : slides.length - 1;
                     focusSlider(activeSlide);
                 }
             }
@@ -7712,17 +7711,18 @@ PERFORMANCE OF THIS SOFTWARE.
                 document.addEventListener("wheel", sliderWheel, {
                     passive: false
                 });
+                titles.forEach(((title, index) => {
+                    title.addEventListener("click", (() => {
+                        slideIndex = index;
+                        changeActiveTitle(slideIndex);
+                    }));
+                }));
             }
             function exitSlider() {
                 document.documentElement.classList.contains("lock") ? document.documentElement.classList.remove("lock") : 0;
                 document.documentElement.classList.contains("_slide-focus") ? document.documentElement.classList.remove("_slide-focus") : 0;
                 addScrollWatcher();
             }
-            titles.forEach(((title, index) => {
-                title.addEventListener("click", (() => {
-                    changeActiveTitle(index);
-                }));
-            }));
             addScrollWatcher();
         }
     }
