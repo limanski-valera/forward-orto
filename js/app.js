@@ -7676,7 +7676,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     changeActiveTitle(nextSlideIndex);
                 }
                 function sliderWheel(e) {
-                    if (e.deltaY > 10) {
+                    if (e.deltaY > 0) {
                         document.removeEventListener("wheel", sliderWheel, {
                             passive: false
                         });
@@ -7689,7 +7689,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                 });
                             }), 1e3);
                         } else exitSlider();
-                    } else if (e.deltaY < -10) {
+                    } else if (e.deltaY < 0) {
                         document.removeEventListener("wheel", sliderWheel, {
                             passive: false
                         });
