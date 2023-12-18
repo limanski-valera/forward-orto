@@ -7648,13 +7648,17 @@ PERFORMANCE OF THIS SOFTWARE.
         if (document.querySelector(".full-page-home") && !document.documentElement.classList.contains("touch") && document.documentElement.clientWidth > 991.98) {
             const slides = document.querySelectorAll(".full-page-home");
             const titles = document.querySelectorAll(".titles-home-slides__title");
-            const startSliderPosition = slides[0].getBoundingClientRect().top + scrollY;
-            const endSLiderPosition = slides[slides.length - 1].getBoundingClientRect().top + scrollY;
+            let startSliderPosition = slides[0].getBoundingClientRect().top + scrollY;
+            let endSLiderPosition = slides[slides.length - 1].getBoundingClientRect().top + scrollY;
             const slidesClasses = {
                 0: ".full-page-home--first",
                 1: ".full-page-home--second",
                 2: ".full-page-home--third"
             };
+            window.addEventListener("resize", (() => {
+                startSliderPosition = slides[0].getBoundingClientRect().top + scrollY;
+                endSLiderPosition = slides[slides.length - 1].getBoundingClientRect().top + scrollY;
+            }));
             function changeActiveTitle(activeIndex) {
                 titles.forEach(((title, titleIndex) => {
                     if (titleIndex === activeIndex) !title.classList.contains("_active") ? title.classList.add("_active") : title; else if (title.classList.contains("_active")) title.classList.remove("_active");
@@ -7664,6 +7668,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 window.addEventListener("scroll", scrollWatcherCallback);
             }
             function scrollWatcherCallback() {
+                console.log(scrollY);
                 if (scrollY > startSliderPosition && scrollY < endSLiderPosition) {
                     let activeSlide = slides[0].getBoundingClientRect().top > -700 ? 0 : slides.length - 1;
                     focusSlider(activeSlide);

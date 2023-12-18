@@ -3110,7 +3110,7 @@ body::after {
   bottom: 4.375rem;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 10;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: visibility 0.5s, opacity 0.5s, -webkit-transform 0.5s;
