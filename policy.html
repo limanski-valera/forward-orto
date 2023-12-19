@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Корисна інформація</title>
+	<title>Наші спеціалісти</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -14,7 +14,7 @@
 
 <body>
 	<div class="wrapper">
-		<header data-scroll data-scroll-show="999999" class="header _white">
+		<header data-scroll data-scroll-show="999999" class="header undefined">
 			<div class="header__container">
 				<div class="header__main">
 					<div class="header__logo-wrapper">
@@ -343,31 +343,14 @@
 			</div>
 		</header>
 
-		<main class="information-article">
-			<section data-watch data-watch-once class="information-article__main-block">
-				<div class="information-article__container">
-					<div class="information-article__breadcrumbs breadcrumbs">
-						<a href="#" class="breadcrumbs__link">Назад до корисних статей</a>
-					</div>
-					<h1 class="information-article__title">
-						Тепер протезування осіб з інвалідністю може бути комфортнішим
-					</h1>
-					<div class="information-article__bottom-row">
-						<div class="information-article__tags">
-							<span class="information-article__tag">Засоби реабілітації</span>
-							<span class="information-article__tag">Спорт та Lifestyle</span>
-						</div>
-						<div class="information-article__main-info">
-							<span class="information-article__article-date">23 жовтня 2023</span>
-							<button data-popup="#popup-share" type="button" class="information-article__share _icon-bold-arrow">
-								<span class="information-article__text-share">Поширити новину</span>
-							</button>
-						</div>
-					</div>
+		<main class="page-policy">
+			<section data-watch data-watch-once class="page-policy__main-block main-page-specialists">
+				<div class="main-page-specialists__container">
+					<a href="#" class="main-page-specialists__link-back">Назад</a>
+					<h1 class="main-page-specialists__title">Privacy & Cookie Policy</h1>
 				</div>
 			</section>
-			<div class="information-article__image"></div>
-			<div class="information-article__content content-information-article">
+			<div class="page-policy__content content-information-article">
 				<div class="content-information-article__container">
 					<div class="content-information-article__part">
 						<div class="content-information-article__text content-information-article__text--big">
@@ -433,9 +416,6 @@
 						</ul>
 					</div>
 					<div class="content-information-article__part">
-						<div class="content-information-article__image">
-							<picture><source srcset="img/information/second-image.webp" type="image/webp"><img src="img/information/second-image.jpg" alt="" /></picture>
-						</div>
 						<div class="content-information-article__text content-information-article__text--semi">
 							Головним досягненням 2016 року стало збільшення асортименту візків
 							для підлітків та дорослих.
@@ -457,7 +437,10 @@
 								візків, що постачає свою продукцію у 52 країни світу. Згодом
 								підприємство отримало право стати ліцензійним представником
 								фірми “Meyra” в Україні. В 2017 році сертифіковано сім нових
-								виробів. У 2018 році відбулась сертифікація двох крісел колісних
+								виробів.
+							</p>
+							<p>
+								У 2018 році відбулась сертифікація двох крісел колісних
 								виробництва фірми «MDH», а саме дитячого крісла колісного JUNIOR
 								PLUS, що дає змогу змінити кут нахилу системи опори тіла, та
 								крісла колісного середньоактивного базового VCWK 9АС-01.
@@ -556,9 +539,6 @@
 						</ul>
 					</div>
 					<div class="content-information-article__part">
-						<div class="content-information-article__video">
-							<video src="img/video.mp4" controls></video>
-						</div>
 						<div class="content-information-article__text content-information-article__text--semi">
 							Головним досягненням 2016 року стало збільшення асортименту візків
 							для підлітків та дорослих.
@@ -613,22 +593,6 @@
 								Успішно пройшли сертифікацію два нових дитячих крісла колісних
 								виробництва компанії "MDH" - Umbrella та Promyk.
 							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="information-article__footer footer-information-article">
-				<div class="footer-information-article__container">
-					<div class="information-article__bottom-row">
-						<div class="information-article__tags">
-							<span class="information-article__tag">Засоби реабілітації</span>
-							<span class="information-article__tag">Спорт та Lifestyle</span>
-						</div>
-						<div class="information-article__main-info">
-							<span class="information-article__article-date">23 жовтня 2023</span>
-							<button type="button" data-popup="#popup-share" class="information-article__share _icon-bold-arrow">
-								<span class="information-article__text-share">Поширити новину</span>
-							</button>
 						</div>
 					</div>
 				</div>
@@ -692,15 +656,31 @@
 			</div>
 		</footer>
 	</div>
-	<div id="popup-share" aria-hidden="true" class="popup popup-share">
+	<div id="popup-vacancies" aria-hidden="true" class="popup popup-product">
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<button data-close type="button" class="popup__close"></button>
-				<h2 class="popup-share__title">Поширити новину</h2>
-				<div class="popup-share__items">
-					<a href="#" class="popup-share__link _icon-s-twitter"></a>
-					<a href="#" class="popup-share__link _icon-s-facebook"></a>
-					<a href="#" class="popup-share__link _icon-s-linkedin"></a>
+				<div class="popup__text">
+					<form action="#" class="popup__form form-popup">
+						<div class="form-popup__item item-form-popup">
+							Імʼя
+							<input type="text" name="Імʼя" placeholder="Вкажіть ваше імʼя" class="item-form-popup__input input" />
+						</div>
+						<div class="form-popup__item item-form-popup">
+							Номер телeфону
+							<input type="tel" name="Телефон" placeholder="+38 ( _ _ _ ) - _ _ _ - _ _ - _ _" class="item-form-popup__input input" />
+						</div>
+						<div class="form-popup__item item-form-popup">
+							Електронна пошта
+							<input type="email" name="Телефон" placeholder="example@mail.com" class="item-form-popup__input input" />
+						</div>
+						<div class="form-popup__file-wrapper file-wrapper">
+							<label class="file-wrapper__button _icon-clip">
+								<input class="file-wrapper__input" type="file" /><span class="file-wrapper__text">Прикріпити резюме</span></label>
+							<span class="file-wrapper__file-name">Имя файла</span>
+						</div>
+						<button class="form-popup__button" type="submit">Надіслати</button>
+					</form>
 				</div>
 			</div>
 		</div>

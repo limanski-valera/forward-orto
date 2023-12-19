@@ -5202,6 +5202,26 @@
                 });
             }));
         }
+        if (document.querySelector(".certificates-about-page__slider")) new swiper_core_Swiper(".certificates-about-page__slider", {
+            modules: [ Navigation ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 2,
+            spaceBetween: 6,
+            speed: 800,
+            navigation: {
+                prevEl: ".certificates-about-page__button--prev",
+                nextEl: ".certificates-about-page__button--next"
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.05
+                },
+                768: {
+                    slidesPerView: 2
+                }
+            }
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -7753,7 +7773,15 @@ PERFORMANCE OF THIS SOFTWARE.
     }
     function filterInit() {
         if (document.querySelector(".filters__open-button") && document.querySelector(".filters__top-row") && document.querySelector(".filters__close-button")) document.addEventListener("click", (e => {
-            if (e.target.closest(".filters__open-button") && !document.documentElement.classList.contains("filter-opened")) document.documentElement.classList.add("filter-opened"); else if (e.target.closest(".filters__close-button") && document.documentElement.classList.contains("filter-opened")) document.documentElement.classList.remove("filter-opened");
+            function openFilter() {
+                document.documentElement.classList.add("filter-opened");
+                document.documentElement.classList.add("lock");
+            }
+            function closeFilter() {
+                document.documentElement.classList.remove("filter-opened");
+                document.documentElement.classList.remove("lock");
+            }
+            if (e.target.closest(".filters__open-button") && !document.documentElement.classList.contains("filter-opened")) openFilter(); else if (e.target.closest(".filters__close-button") && document.documentElement.classList.contains("filter-opened")) closeFilter();
         }));
     }
     function initContactsPopup() {
