@@ -7858,7 +7858,47 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
         }
     }
+    function initCookies() {
+        if (document.querySelector(".cookies-window")) {
+            const wrapper = document.querySelector(".cookies-window");
+            function checkAgree() {
+                if (!localStorage.getItem("agreeCookies")) wrapper.style = "display: block"; else wrapper.style = "display: none";
+            }
+            checkAgree();
+            document.addEventListener("click", (e => {
+                if (e.target.closest(".cookies-window__button-agree")) {
+                    localStorage.setItem("agreeCookies", true);
+                    checkAgree();
+                } else if (e.target.closest(".cookies-window__button-close")) wrapper.style = "display: none";
+            }));
+        }
+    }
+    function initFilters() {
+        const itemsList = document.querySelectorAll(".item-filter");
+        function closeItem(item) {
+            item.classList.contains("_filter-active") ? item.classList.remove("_filter-active") : 0;
+        }
+        function toggleItem(item) {
+            item.classList.contains("_filter-active") ? item.classList.remove("_filter-active") : item.classList.add("_filter-active");
+        }
+        function openFilter() {
+            !document.documentElement.classList.contains("_open-filters") ? document.documentElement.classList.add("_open-filters") : 0;
+            !document.documentElement.classList.contains("lock") ? document.documentElement.classList.add("lock") : 0;
+        }
+        function closeFilter() {
+            document.documentElement.classList.contains("_open-filters") ? document.documentElement.classList.remove("_open-filters") : 0;
+            document.documentElement.classList.contains("lock") ? document.documentElement.classList.remove("lock") : 0;
+        }
+        document.addEventListener("click", (e => {
+            if (e.target.closest(".filters__button-open")) openFilter(); else if (e.target.closest(".filters__button-close") || e.target.closest(".filters__button--show-resuts") || e.target.closest(".filters__button--clear")) closeFilter(); else if (e.target.closest(".item-filter__title") && !e.target.closest(".window-info-wrapper__icon")) itemsList.forEach((item => {
+                item !== e.target.closest(".item-filter") ? closeItem(item) : toggleItem(item);
+            })); else if (!e.target.closest(".item-filter")) itemsList.forEach((item => {
+                closeItem(item);
+            }));
+        }));
+    }
     document.addEventListener("DOMContentLoaded", (() => {
+        initCookies();
         initCustomTabs();
         initCatalog();
         footerDecor();
@@ -7870,6 +7910,7 @@ PERFORMANCE OF THIS SOFTWARE.
         initProductsDialogs();
         uploadFile();
         initCertificatesPopups();
+        if (document.querySelector(".filters")) initFilters();
     }));
     window["FLS"] = false;
     isWebp();
