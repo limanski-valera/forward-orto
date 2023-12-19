@@ -3171,7 +3171,7 @@ body::after {
 }
 
 .no-webp .main-block-home{
-  background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 100%), url(../img/home/main-block.jpeg) center center/cover no-repeat fixed; }
+  background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 100%), url(../img/home/main-block.jpeg) center center/cover no-repeat; }
 
 .main-block-home {
   position: relative;
@@ -3188,6 +3188,7 @@ body::after {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
+  background-attachment: fixed;
   opacity: 0;
 }
 
@@ -3591,10 +3592,11 @@ body::after {
 }
 
 .no-webp .garta-home{
-  background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.22) 3.65%, rgba(38, 45, 48, 0.81) 100%), url("../img/home/garta-center.png") center center/cover no-repeat fixed; }
+  background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.22) 3.65%, rgba(38, 45, 48, 0.81) 100%), url("../img/home/garta-center.png") center center/cover no-repeat; }
 
 .garta-home {
   color: #fff;
+  background-attachment: fixed;
 }
 
 .touch .garta-home {
@@ -4873,11 +4875,12 @@ body::after {
 }
 
 .no-webp .information-article__image{
-  background: url("../img/information/main-image.jpeg") center center/cover no-repeat fixed; }
+  background: url("../img/information/main-image.jpeg") center center/cover no-repeat; }
 
 .information-article__image {
   position: relative;
   height: 100vh;
+  background-attachment: fixed;
 }
 
 .touch .information-article__image {
@@ -6153,12 +6156,13 @@ body::after {
 }
 
 .no-webp .main-block-about-page{
-  background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 99.99%, rgba(38, 45, 48, 0.88) 100%), url("../img/about-us/main-block.jpeg") center center/cover no-repeat fixed; }
+  background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 99.99%, rgba(38, 45, 48, 0.88) 100%), url("../img/about-us/main-block.jpeg") center center/cover no-repeat; }
 
 .main-block-about-page {
   color: #fff;
   min-height: 100vh;
   position: relative;
+  background-attachment: fixed;
 }
 
 .touch .main-block-about-page {
@@ -12495,10 +12499,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 
-.webp .main-block-home{ background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 100%), url(../img/home/main-block.webp) center center/cover no-repeat fixed; }
+.webp .main-block-home{ background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 100%), url(../img/home/main-block.webp) center center/cover no-repeat; }
 
-.webp .garta-home{ background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.22) 3.65%, rgba(38, 45, 48, 0.81) 100%), url(../img/home/garta-center.webp) center center/cover no-repeat fixed; }
+.webp .garta-home{ background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.22) 3.65%, rgba(38, 45, 48, 0.81) 100%), url(../img/home/garta-center.webp) center center/cover no-repeat; }
 
-.webp .information-article__image{ background: url(../img/information/main-image.webp) center center/cover no-repeat fixed; }
+.webp .information-article__image{ background: url(../img/information/main-image.webp) center center/cover no-repeat; }
 
-.webp .main-block-about-page{ background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 99.99%, rgba(38, 45, 48, 0.88) 100%), url(../img/about-us/main-block.webp) center center/cover no-repeat fixed; }
+.webp .main-block-about-page{ background: radial-gradient(50% 50% at 50% 50%, rgba(38, 45, 48, 0.88) 3.65%, rgba(38, 45, 48, 0.88) 99.99%, rgba(38, 45, 48, 0.88) 100%), url(../img/about-us/main-block.webp) center center/cover no-repeat; }
