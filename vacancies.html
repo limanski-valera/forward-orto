@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231219222525">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231228170041">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,19 +24,37 @@
 					<div class="header__menu menu">
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item">
-									<button class="menu__link _header-catalog-button">
-										Продукція
-										<span class="_icon-daw"></span>
-									</button>
+								<li class="menu-item _header-catalog-button">
+									<a href="#"> Продукція</a>
 								</li>
-								<li class="menu__item"><a href="" class="menu__link">Про нас</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Представництва</a></li>
-								<li class="menu__item">
-									<a href="" class="menu__link">Корисна інформація</a>
+								<li class="menu-item">
+									<a href="#">Про нас</a>
 								</li>
-								<li class="menu__item"><a href="" class="menu__link">Наші фахівці</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Контакти</a></li>
+								<li class="menu-item">
+									<a href="#">Представництва</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Корисна інформація</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Наші фахівці</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Контакти</a>
+								</li>
+								<!-- <li class="menu__item">
+                            <a class="menu__link _header-catalog-button">
+                                Продукція
+                                <span class="_icon-daw"></span>
+                            </a>
+                        </li>
+                        <li class="menu__item"><a href="" class="menu__link">Про нас</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Представництва</a></li>
+                        <li class="menu__item">
+                            <a href="" class="menu__link">Корисна інформація</a>
+                        </li>
+                        <li class="menu__item"><a href="" class="menu__link">Наші фахівці</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Контакти</a></li> -->
 							</ul>
 						</nav>
 					</div>
@@ -78,23 +96,44 @@
 				<div class="header__catalog catalog-header">
 					<button class="catalog-header__button-back">Назад</button>
 					<div class="catalog-header__tabs">
-						<nav data-da=".menu__body, 767.98, 0" class="catalog-header__navigation">
-							<button type="button" class="catalog-header__title _tab-active">
-								Крісла колісні<span class="_icon-daw"></span>
-							</button>
-							<button type="button" class="catalog-header__title">
-								Ортопедичне взуття<span class="_icon-daw"></span>
-							</button>
-							<button type="button" class="catalog-header__title">
-								Протези та інше<span class="_icon-daw"></span>
-							</button>
-							<button type="button" class="catalog-header__title">
-								Ортези та інше<span class="_icon-daw"></span>
-							</button>
-							<button type="button" class="catalog-header__title">
-								Інші засоби реабілітації<span class="_icon-daw"></span>
-							</button>
-						</nav>
+						<div data-da=".menu__body, 767.98, 0" class="catalog-header__navigation">
+							<nav class="catalog-header__menu">
+								<ul class="catalog-header__menu-list">
+									<li class="menu-item _icon-daw _tab-active">
+										<a href="#">Крісла колісні</a>
+									</li>
+									<li class="menu-item _icon-daw">
+										<a href="#">Ортопедичне взуття</a>
+									</li>
+									<li class="menu-item _icon-daw">
+										<a href="#">Протези та інше</a>
+									</li>
+									<li class="menu-item _icon-daw">
+										<a href="#">Ортези та інше</a>
+									</li>
+									<li class="menu-item _icon-daw">
+										<a href="#">Інші засоби реабілітації</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- <nav data-da=".menu__body, 767.98, 0" class="catalog-header__navigation">
+                    <button type="button" class="catalog-header__title _tab-active">
+                        Крісла колісні<span class="_icon-daw"></span>
+                    </button>
+                    <button type="button" class="catalog-header__title">
+                        Ортопедичне взуття<span class="_icon-daw"></span>
+                    </button>
+                    <button type="button" class="catalog-header__title">
+                        Протези та інше<span class="_icon-daw"></span>
+                    </button>
+                    <button type="button" class="catalog-header__title">
+                        Ортези та інше<span class="_icon-daw"></span>
+                    </button>
+                    <button type="button" class="catalog-header__title">
+                        Інші засоби реабілітації<span class="_icon-daw"></span>
+                    </button>
+                </nav> -->
 						<div class="catalog-header__content">
 							<div class="catalog-header__body _grid-seven">
 								<a href="#" class="catalog-header__category-label">Усі крісла колісні</a>
@@ -569,7 +608,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231219222525"></script>
+	<script src="js/app.min.js?_v=20231228170041"></script>
 </body>
 
 </html>

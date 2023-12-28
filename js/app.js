@@ -7618,6 +7618,7 @@ PERFORMANCE OF THIS SOFTWARE.
             const closeButton = document.querySelector(".catalog-header__button-back");
             document.addEventListener("click", (e => {
                 if (e.target.closest("._header-catalog-button")) {
+                    e.preventDefault();
                     document.documentElement.classList.toggle("catalog-open");
                     document.documentElement.classList.toggle("lock");
                 } else if (!e.target.closest(".header") && document.documentElement.classList.contains("catalog-open")) {
@@ -7629,7 +7630,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 document.documentElement.classList.remove("catalog-open");
             }));
             if (document.documentElement.clientWidth < 768) document.addEventListener("click", (e => {
-                if (e.target.closest(".catalog-header__title")) {
+                if (e.target.closest(".menu-item") && e.target.closest(".catalog-header__menu-list")) {
                     document.documentElement.classList.add("catalog-open");
                     document.documentElement.classList.add("lock");
                 }
@@ -7643,8 +7644,8 @@ PERFORMANCE OF THIS SOFTWARE.
         }
     }
     function initCustomTabs() {
-        if (document.querySelector(".catalog-header__title") && document.querySelector(".catalog-header__body")) {
-            const buttons = document.querySelectorAll(".catalog-header__title");
+        if (document.querySelector(".catalog-header__navigation .menu-item") && document.querySelector(".catalog-header__body")) {
+            const buttons = document.querySelectorAll(".catalog-header__navigation .menu-item");
             const bodies = document.querySelectorAll(".catalog-header__body");
             bodies.forEach((item => item.style = "display: none"));
             function closeTabs() {
@@ -7658,7 +7659,8 @@ PERFORMANCE OF THIS SOFTWARE.
             }
             buttons.forEach(((button, index) => button.classList.contains("_tab-active") ? bodies[index].style = "display: block" : bodies[index].style = "display: none"));
             buttons.forEach(((button, index) => {
-                button.addEventListener("click", (() => {
+                button.addEventListener("click", (e => {
+                    e.preventDefault();
                     openTab(index);
                 }));
             }));
