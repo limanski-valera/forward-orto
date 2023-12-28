@@ -10218,6 +10218,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: 0;
   }
 
+  .content-information-article ul li::before {
+    left: 0;
+  }
+
+  .content-information-article ol li {
+    padding-left: 1.25rem;
+  }
+
+  .content-information-article ol li::before {
+    left: 0;
+  }
+
   .representations__body {
     padding-bottom: 0;
   }
