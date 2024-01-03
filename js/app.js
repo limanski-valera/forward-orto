@@ -7613,58 +7613,24 @@ PERFORMANCE OF THIS SOFTWARE.
     }
     const da = new DynamicAdapt("max");
     da.init();
-    function initCatalog() {
-        if (document.querySelector("._header-catalog-button") && document.querySelector(".catalog-header")) {
-            const closeButton = document.querySelector(".catalog-header__button-back");
-            document.addEventListener("click", (e => {
-                if (e.target.closest("._header-catalog-button")) {
-                    e.preventDefault();
-                    document.documentElement.classList.toggle("catalog-open");
-                    document.documentElement.classList.toggle("lock");
-                } else if (!e.target.closest(".header") && document.documentElement.classList.contains("catalog-open")) {
-                    document.documentElement.classList.remove("catalog-open");
-                    document.documentElement.classList.remove("lock");
-                }
-            }));
-            closeButton.addEventListener("click", (() => {
-                document.documentElement.classList.remove("catalog-open");
-            }));
-            if (document.documentElement.clientWidth < 768) document.addEventListener("click", (e => {
-                if (e.target.closest(".menu-item") && e.target.closest(".catalog-header__menu-list")) {
-                    document.documentElement.classList.add("catalog-open");
-                    document.documentElement.classList.add("lock");
-                }
-            }));
-            document.addEventListener("click", (e => {
-                if (e.target.closest(".icon-menu") && document.documentElement.classList.contains("catalog-open")) {
-                    document.documentElement.classList.remove("catalog-open");
-                    document.documentElement.classList.remove("lock");
-                }
-            }));
+    function initDropdown() {
+        const items = document.querySelectorAll(".dropdown");
+        function closeDropdowns() {
+            document.documentElement.classList.contains("lock") ? document.documentElement.classList.remove("lock") : 0;
+            document.documentElement.classList.contains("catalog-open") ? document.documentElement.classList.remove("catalog-open") : 0;
+            items.forEach((item => item.classList.contains("_opened") ? item.classList.remove("_opened") : item));
         }
-    }
-    function initCustomTabs() {
-        if (document.querySelector(".catalog-header__navigation .menu-item") && document.querySelector(".catalog-header__body")) {
-            const buttons = document.querySelectorAll(".catalog-header__navigation .menu-item");
-            const bodies = document.querySelectorAll(".catalog-header__body");
-            bodies.forEach((item => item.style = "display: none"));
-            function closeTabs() {
-                buttons.forEach((button => button.classList.remove("_tab-active")));
-                bodies.forEach((item => item.style = "display: none"));
-            }
-            function openTab(index) {
-                closeTabs();
-                buttons[index].classList.add("_tab-active");
-                bodies[index].style = "display: block";
-            }
-            buttons.forEach(((button, index) => button.classList.contains("_tab-active") ? bodies[index].style = "display: block" : bodies[index].style = "display: none"));
-            buttons.forEach(((button, index) => {
-                button.addEventListener("click", (e => {
-                    e.preventDefault();
-                    openTab(index);
-                }));
-            }));
+        function openDropdown(parentEl) {
+            !document.documentElement.classList.contains("lock") ? document.documentElement.classList.add("lock") : 0;
+            !document.documentElement.classList.contains("catalog-open") ? document.documentElement.classList.add("catalog-open") : 0;
+            parentEl.classList.add("_opened");
         }
+        document.addEventListener("click", (e => {
+            if (e.target.closest(".dropdown__toggle")) if (e.target.closest("._opened")) closeDropdowns(); else {
+                e.preventDefault();
+                openDropdown(e.target.closest(".dropdown"));
+            } else if (e.target.closest(".dropdown__menu-wrapper") && !e.target.closest(".dropdown__menu")) closeDropdowns();
+        }));
     }
     function displayScroll() {
         if (document.querySelector(".full-page-home") && !document.documentElement.classList.contains("touch") && document.documentElement.clientWidth > 991.98) {
@@ -7690,7 +7656,6 @@ PERFORMANCE OF THIS SOFTWARE.
                 window.addEventListener("scroll", scrollWatcherCallback);
             }
             function scrollWatcherCallback() {
-                console.log(scrollY);
                 if (scrollY > startSliderPosition && scrollY < endSLiderPosition) {
                     let activeSlide = slides[0].getBoundingClientRect().top > -700 ? 0 : slides.length - 1;
                     focusSlider(activeSlide);
@@ -7899,12 +7864,39 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
         }));
     }
+    function initHeaderCatalog() {
+        const buttons = document.querySelectorAll(".dropdown__link");
+        const items = document.querySelectorAll(".dropdown__item");
+        function closeBodies(indexNotClose) {
+            if (document.documentElement.clientWidth >= 768) items.forEach(((item, index) => {
+                item.classList.contains("_active") && index !== indexNotClose ? item.classList.remove("_active") : 0;
+            })); else items.forEach(((item, index) => {
+                item.classList.contains("_dropdown-opened") && index !== indexNotClose ? item.classList.remove("_dropdown-opened") : 0;
+            }));
+        }
+        function openBody(index) {
+            if (document.documentElement.clientWidth >= 768) items[index].classList.add("_active"); else items[index].classList.add("_dropdown-opened");
+        }
+        buttons.forEach(((button, index) => {
+            button.addEventListener("click", (e => {
+                e.preventDefault();
+                if (document.documentElement.clientWidth >= 768) if (!items[index].classList.contains("_active")) {
+                    closeBodies();
+                    openBody(index);
+                } else closeBodies(index); else openBody(index);
+            }));
+        }));
+        document.addEventListener("click", (e => {
+            if (e.target.closest(".icon-menu") || e.target.closest(".dropdown__button-close")) closeBodies();
+        }));
+    }
     document.addEventListener("DOMContentLoaded", (() => {
         initCookies();
-        initCustomTabs();
-        initCatalog();
-        footerDecor();
+        if (document.querySelector(".dropdown")) initDropdown();
         if (document.documentElement.clientWidth < 768) catalogViews();
+        if (document.querySelector(".dropdown__link") && document.querySelector(".dropdown__cards-list")) initHeaderCatalog();
+        if (document.querySelector(".filters")) initFilters();
+        footerDecor();
         filterInit();
         displayScroll();
         initContactsPopup();
@@ -7912,7 +7904,6 @@ PERFORMANCE OF THIS SOFTWARE.
         initProductsDialogs();
         uploadFile();
         initCertificatesPopups();
-        if (document.querySelector(".filters")) initFilters();
     }));
     window["FLS"] = false;
     isWebp();
